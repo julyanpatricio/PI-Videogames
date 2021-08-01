@@ -33,7 +33,10 @@ module.exports = (sequelize) => {
       // type: DataTypes.DATEONLY //Si llego con el tiempo, desplegar en el form un 'calendario' para ingresar una fecha y luego formatearlo con el formato de DATEONLY antes de guardarlo en la base de datos
     },
     rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
+      validate: {
+        max:5
+      }
     },
     platforms: {
       type: DataTypes.STRING,
@@ -42,6 +45,9 @@ module.exports = (sequelize) => {
       //     isIn: [/*extraer datos de https://api.rawg.io/api/platforms/lists/parents?key=e90a3925844544f39dc82b1a0bc9b811*/]
       //   }
     },
+    background_image: {
+      type: DataTypes.STRING
+    }
   });
 
 };

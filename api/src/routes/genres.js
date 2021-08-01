@@ -12,8 +12,8 @@ En una primera instancia deberán traerlos desde rawg y guardarlos en su propia 
 */
 router.get('/', async (req, res, next) => { // viene de /genres
    try {
-      const genres = await axios.get(`${URLapiGenres}?${KEY_API}`) 
-      res.json(genres.data.results.map(g => g.name))
+      const genres = await Genre.findAll()
+      res.json(genres)
    } catch (error) {
       next(error)
    }
