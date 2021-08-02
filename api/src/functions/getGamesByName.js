@@ -49,8 +49,9 @@ const getGamesByName = async (name, next) => { // viene de /videogames
         let aux = {
           id: game.id,
           name: game.name,
-          image: game.image,
-          rating: game.rating
+          image: game.image || game.background_image,
+          rating: game.rating,
+          genres: game.genres
         }
         console.log(aux)
         primeros15.push(aux)
