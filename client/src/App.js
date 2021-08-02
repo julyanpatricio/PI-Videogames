@@ -12,7 +12,7 @@ function App() {
     <>
     <Route path="/" component={Nav} />
       <div className="container content">
-        <Route path="/home" exact component={Games} />
+        <Route path="/games" exact component={Games} />
         <Switch>
           <Route path="/game/add" exact component={AddGame} />
           <Route path="/game/:id" exact component={Game} />

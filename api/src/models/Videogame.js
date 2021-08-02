@@ -45,8 +45,9 @@ module.exports = (sequelize) => {
       //     isIn: [/*extraer datos de https://api.rawg.io/api/platforms/lists/parents?key=e90a3925844544f39dc82b1a0bc9b811*/]
       //   }
     },
-    background_image: {
-      type: DataTypes.STRING
+    image: {
+      type: DataTypes.STRING,
+      defaultValue: 'https://avatars.githubusercontent.com/u/57154655?s=200&v=4'
     }
   });
 

@@ -26,7 +26,7 @@ Géneros
 
 */
 
-const getGamesById = async (name, next) => { // viene de /videogames
+const getGamesByName = async (name, next) => { // viene de /videogames
   try {
   
     const condition = {
@@ -41,25 +41,19 @@ const getGamesById = async (name, next) => { // viene de /videogames
         Videogame.findAll(condition)
       ])
     
-    const gamesApi100 = []
-
-    gamesApi.data.results.some(game => {
-      let aux = {
-        id: game.id,
-        name: game.name,
-        image: game.background_image,
-        rating: game.rating
-      }
-      gamesApi100.push(aux)
-      if(gamesApi100.length > 100) return true //la api solo devuelve 20. REVISAR ESO
-    })
-
-    const games = gamesDb.concat(gamesApi100)
+    const games = gamesDb.concat(gamesApi.data.results)
     if(!games.length) return res.send('games not found')
     if(games.length > 15) {
       const primeros15 = []
       games.some(game => {
-        primeros15.push(game)
+        let aux = {
+          id: game.id,
+          name: game.name,
+          image: game.image,
+          rating: game.rating
+        }
+        console.log(aux)
+        primeros15.push(aux)
         if(primeros15.length === 15) return true
       }) 
       return primeros15
@@ -70,4 +64,4 @@ const getGamesById = async (name, next) => { // viene de /videogames
       next(error)   
   }
 }
-module.exports = {getGamesById}
+module.exports = {getGamesByName}

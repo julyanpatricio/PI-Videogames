@@ -2,10 +2,10 @@ import axios from "axios";
 
 export function getGames(name) {
   return function(dispatch) {
-    return axios.get('/videogames') //axios tiene como default localhost:3001
-      .then(response => response.json())
+    let path = name? `?name=${name}` : '/'
+    return axios.get(`/videogames${path}`) //axios tiene como default localhost:3001
       .then(json => {
-        dispatch({ type: "GET_GAMES", payload: json });
+        dispatch({ type: "GET_GAMES", payload: json.data });
       });
   };
 }

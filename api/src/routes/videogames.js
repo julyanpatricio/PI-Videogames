@@ -5,7 +5,7 @@ const {URLapiGames, URLapiGameSearch, URLapiGenres } = require('../../constantes
 const {KEY_API} = process.env;
 const axios = require ('axios')
 const {getGames} = require('../functions/getGames')
-const {getGamesById} = require('../functions/getGamesById')
+const {getGamesByName} = require('../functions/getGamesByName')
 
 /*
 [ ] GET /videogames:
@@ -35,7 +35,7 @@ router.get('/', async (req, res, next) => { // viene de /videogames
     res.json(await getGames(next))
     
   } else {
-    res.json(await getGamesById(name, next))
+    res.json(await getGamesByName(name, next))
   }
   
 

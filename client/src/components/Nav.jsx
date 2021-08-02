@@ -6,7 +6,7 @@ function Nav() {
     <div className="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div className="container">
         <div className="navbar-header">
-          <button
+          {/* <button
             type="button"
             className="navbar-toggle"
             data-toggle="collapse"
@@ -16,7 +16,7 @@ function Nav() {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
-          </button>
+          </button> */}
           <Link className="navbar-brand" to="/">
             Videogames
           </Link>
