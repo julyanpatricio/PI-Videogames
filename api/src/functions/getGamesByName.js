@@ -53,7 +53,6 @@ const getGamesByName = async (name, next) => { // viene de /videogames
           rating: game.rating,
           genres: game.genres
         }
-        console.log(aux)
         primeros15.push(aux)
         if(primeros15.length === 15) return true
       }) 

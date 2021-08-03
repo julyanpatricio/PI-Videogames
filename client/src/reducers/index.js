@@ -1,6 +1,7 @@
 
 const initialState = {
-  games: []
+  games: [],
+  game: undefined
 };
 
 function rootReducer(state = initialState, action) {
@@ -25,9 +26,10 @@ function rootReducer(state = initialState, action) {
       games: action.payload
     }
     
-    case 'GET_GAME_DETAIL':
+    case "GET_GAME_DETAIL":
       return {
         ...state,
+      game: action.payload
       }
 
     default:

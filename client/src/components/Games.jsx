@@ -53,7 +53,7 @@ function Games() {
       {games.map((game) => (
         <React.Fragment key={game.id}>
           
-        <Link to={game.id.toString()}>
+        <Link to={`/game/${game.id}`}>
           <h3>{game.name}</h3>
           </Link>
           

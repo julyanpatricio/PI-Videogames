@@ -27,7 +27,6 @@ router.get('/:id', async (req, res, next) => { // viene de /videogame
   try {
     if(isUUID.anyNonNil(id)){
       // var game = await Videogame.findByPk(id)
-      console.log(id)
       var game = await Videogame.findAll({where:{id:id}, include: 'genres'})
       game = game[0]
     } else{
@@ -38,10 +37,10 @@ router.get('/:id', async (req, res, next) => { // viene de /videogame
     return res.json({
       id: game.id,
       name: game.name,
-      image: game.background_image,
+      image: game.background_image || game.image,
       description: game.description,
       release_date: game.release_date,
-      genres: game.genres.map(g => g.name),
+      genres: game.genres,
       rating:game.rating
     })
   } catch (error) {
@@ -76,12 +75,14 @@ Rating
 
 router.post('/', async (req, res, next) => { // viene de /videogame
   const id = uuidv4()
-  let {name, description, release_date, rating, platforms, genres } = req.body
-  platforms = platforms.join() //convierto array en string separado por coma
+  let {name, description, release_date, rating, platforms, genres, image } = req.body
+  if(platforms instanceof(Array)){
+    platforms = platforms.join()  //convierto array en string separado por coma
+  }
   //tanto las platforms como los genres no va a ser necesario validar ya que en el front vamos a mostrar opciones correctas para clickear
 
   try {
-    const newGame = await Videogame.create({id, name, description, release_date, rating, platforms})
+    const newGame = await Videogame.create({id, name, description, release_date, rating, platforms, image})
     await newGame.setGenres(genres) //creo la vinculacion en la base de datos relacional (en esta tabla se van a crear tantos campos como genres haya. RECORDATORIO!!! al metodo set hay que mandarle el ID del genero en la tabla genres, no los nombres de los generos)
     return res.json(newGame)
   } catch (error) {
