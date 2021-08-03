@@ -1,4 +1,5 @@
 import axios from "axios";
+import { sort } from "../funciones/sort";
 
 export function getGames(name) {
   return function(dispatch) {
@@ -27,7 +28,7 @@ export function clearPage() {
   return { type: 'GET_GAME_DETAIL', payload: undefined} 
 }
 
-export function addGame(payload) {
-  return { type: "ADD_GAME", payload };
+export function sortGames(games){
+  return { type: "SORT_GAMES", payload: games };
 }
 

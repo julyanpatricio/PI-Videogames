@@ -1,3 +1,4 @@
+import { sort } from "../funciones/sort";
 
 const initialState = {
   games: [],
@@ -30,6 +31,13 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
       game: action.payload
+      }
+
+    case "SORT_GAMES":
+
+      return {
+        ...state,
+      games: action.payload
       }
 
     default:
