@@ -32,3 +32,6 @@ export function sortGames(games){
   return { type: "SORT_GAMES", payload: games };
 }
 
+export function filterGames(games){
+  return {type: "FILTER_GAMES", payload: games}
+}

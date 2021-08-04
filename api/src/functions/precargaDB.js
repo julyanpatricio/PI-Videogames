@@ -8,16 +8,18 @@ const precarga = async function(){
   
 
   try {
-    let genres = await axios.get(`${URLapiGenres}?${KEY_API}`) 
+    // let genres = await axios.get(`${URLapiGenres}?${KEY_API}`) 
 
-    genres = genres.data.results.map(g => Genre.create({name: g.name}))
+    // genres = genres.data.results.map(g => Genre.create({name: g.name}))
+    //descomentar las lineas de arriba y comentar la de abajo cuando se arregle la api
+    let genres = ['Action', 'RPG', 'Shooter']
     
     Promise.all(genres)
     .then(res => {
       console.log("Generos precargadas");
     });
   } catch (error) {
-      next(error)
+      console.log(error)
   }
   
 }

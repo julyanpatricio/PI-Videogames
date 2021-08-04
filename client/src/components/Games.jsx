@@ -3,18 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { getGames, sortGames } from "../actions";
 import { Link } from 'react-router-dom'
 import './Games.css'
-import {sort} from '../funciones/sort'
-
+import MostrarBotonOrd from "./BotonesOrdenamiento";
+import MostrarBotonFilt from "./botonesFiltrado";
 
 
 
 function Games() {
-  const games = useSelector((state) => state.games);
+  const [games,n_sort,n_filter,gamesSinFiltro] = useSelector((state) => [state.games,state.n_sort,state.n_filter,state.gamesSinFIltro]);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getGames());
-  }, [dispatch]);
+  }, [dispatch,n_sort,n_filter]);
 
   const [gameSearch, setGameSearch] = useState({
     name: ''
@@ -25,27 +25,7 @@ function Games() {
     ubicacion: 'ambos' //desplegable para elegir existente, creado, ambos
   })
 
-  const [botonOrdenamiento, setMostrarOrdenamiento] = useState(false)
-
-  const [ordenamiento, setOrdenamiento] = useState({
-    modo: '', //alfabeticamente o por rating
-    direccion: '' //descendente o ascendente
-  })
-
-  function handleChangeOrd(e) {
-    setOrdenamiento(ordenamiento => ({
-      ...ordenamiento,
-      [e.target.name]: e.target.value
-    }))
-    if(e.target.name === 'direccion') {
-      dispatch(sortGames( sort(games, ordenamiento.modo, ordenamiento.direccion)))
-      mostrarOrdenamiento()
-    }
-  }
-
-  function mostrarOrdenamiento(){
-    setMostrarOrdenamiento(!botonOrdenamiento)
-  }
+  
 
   function handleChange(e) {
     setGameSearch(gameSearch => ({
@@ -76,27 +56,8 @@ function Games() {
           <button type="submit">BUSCAR</button>
         </form>
 
-    <div className='dropdown'>
-      <div className='title pointerCursor'>Seleccione una opción <i className="fa fa-angle-right"></i></div>
-      
-      <button className={`button button-primary button-primary-${botonOrdenamiento ? 'active' : 'inactive'}`} onClick={mostrarOrdenamiento}>
-          Ordenar juegos
-      </button>
-        <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
-        name='modo' value='Alfabeticamente'
-        >Alfabeticamente</button>
-        <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
-        name='modo' value='Por rating'
-        >Por rating</button>
-        <button className='button' hidden={!(botonOrdenamiento && ordenamiento.modo)} onClick={handleChangeOrd}
-        name='direccion' value='Ascendente'
-        >ascendente</button>
-        <button className='button' hidden={!(botonOrdenamiento && ordenamiento.modo)} onClick={handleChangeOrd}
-        name='direccion' value='Descendente'
-        >descendente</button>
-      
-	  </div>
-
+    <MostrarBotonOrd />
+    <MostrarBotonFilt />
     <h3>Games</h3>
     <hr />
     <ul className="list-unstyled">

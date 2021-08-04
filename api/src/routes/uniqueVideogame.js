@@ -30,8 +30,9 @@ router.get('/:id', async (req, res, next) => { // viene de /videogame
       var game = await Videogame.findAll({where:{id:id}, include: 'genres'})
       game = game[0]
     } else{
-      var game = await axios.get(`${URLapiGames}/${id}?${KEY_API}`)
-      game = game.data
+      // var game = await axios.get(`${URLapiGames}/${id}?${KEY_API}`)
+      // game = game.data
+      //descomenar las lineas de arriba cuando se arregle la api
     }
 
     return res.json({

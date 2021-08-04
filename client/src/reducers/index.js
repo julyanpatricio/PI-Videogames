@@ -2,7 +2,10 @@ import { sort } from "../funciones/sort";
 
 const initialState = {
   games: [],
-  game: undefined
+  gamesSinFIltro:[],
+  game: undefined,
+  n_Sort:0,
+  n_Filter:0
 };
 
 function rootReducer(state = initialState, action) {
@@ -24,7 +27,8 @@ function rootReducer(state = initialState, action) {
     case "GET_GAMES":
       return {
         ...state,
-      games: action.payload
+      games: action.payload,
+      gamesSinFIltro: action.payload
     }
     
     case "GET_GAME_DETAIL":
@@ -37,7 +41,15 @@ function rootReducer(state = initialState, action) {
 
       return {
         ...state,
-      games: action.payload
+      games: action.payload,
+      n_Sort: ++state.n_Sort
+      }
+
+    case "FILTER_GAMES":
+      return {
+        ...state,
+        games: action.payload,
+        n_Filter: ++state.n_Filter
       }
 
     default:
