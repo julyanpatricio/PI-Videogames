@@ -1,8 +1,8 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGames, sortGames } from "../actions";
-import './Games.css'
-import {sort} from '../funciones/sort'
+import { sortGames } from "../actions";
+import { sort } from '../funciones/sort';
+import './Games.css';
 
 function MostrarBotonOrd() {
   const games = useSelector((state) => state.games);
@@ -11,20 +11,22 @@ function MostrarBotonOrd() {
   const [botonOrdenamiento, setMostrarOrdenamiento] = useState(false)
 
   const [ordenamiento, setOrdenamiento] = useState({
-    modo: '', //alfabeticamente o por rating
-    direccion: '' //descendente o ascendente
+    modo: 'Por rating', //alfabeticamente o por rating
+    direccion: 'Descendente', //descendente o ascendente
+    games:games
   })
 
   function handleChangeOrd(e) {
     setOrdenamiento(ordenamiento => ({
       ...ordenamiento,
+      games:games,
       [e.target.name]: e.target.value
     }))
-    if(e.target.name === 'direccion') {
-      dispatch(sortGames( sort(games, ordenamiento.modo, ordenamiento.direccion)))
-      mostrarOrdenamiento()
-    }
   }
+
+  useEffect(() => {
+    dispatch(sortGames( sort(ordenamiento.games, ordenamiento.modo, ordenamiento.direccion)))
+  }, [dispatch, ordenamiento.modo, ordenamiento.direccion, ordenamiento.games])
 
   function mostrarOrdenamiento(){
     setMostrarOrdenamiento(!botonOrdenamiento)

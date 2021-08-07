@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGames, sortGames } from "../actions";
+import { getGames } from "../actions";
 import { Link } from 'react-router-dom'
 import './Games.css'
 import MostrarBotonOrd from "./BotonesOrdenamiento";
@@ -9,22 +9,22 @@ import MostrarBotonFilt from "./botonesFiltrado";
 
 
 function Games() {
-  const [games,n_sort,n_filter,gamesSinFiltro] = useSelector((state) => [state.games,state.n_sort,state.n_filter,state.gamesSinFIltro]);
+  const [games] = useSelector((state) => [state.games]);
   const dispatch = useDispatch();
+  
+  // useEffect(() => {
+  //   console.log(games)
+  //   dispatch(getGames());
+  // }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getGames());
-  }, [dispatch,n_sort,n_filter]);
+    console.log('usseefect')
+    dispatch(getGames()); //trae una nueva lista de juegos
+  }, [dispatch]);
 
   const [gameSearch, setGameSearch] = useState({
     name: ''
   });
-
-  const [filtrado, setFiltrado] = useState({
-    genero: '', //desplegable para elegir un genero entre muchos
-    ubicacion: 'ambos' //desplegable para elegir existente, creado, ambos
-  })
-
   
 
   function handleChange(e) {
@@ -60,22 +60,24 @@ function Games() {
     <MostrarBotonFilt />
     <h3>Games</h3>
     <hr />
-    <ul className="list-unstyled">
+    <div className='gamesList'>
       {games.map((game) => (
         <React.Fragment key={game.id}>
-          
+          <ul className="list-unstyled">
         <Link to={`/game/${game.id}`}>
-          <h3>{game.name}</h3>
+          <h4>{game.name}</h4>
           </Link>
+          <img className='gameImage' width={420} height={300} src={game.image} alt={game.name} />
           
-          <h4>Genres</h4>
+          <span>Genres: </span>
           {game.genres.map((genre,i) => (
-            <p key={genre.games_count || i}>{genre.name}</p>
+            i === 0? <span key={genre.games_count || i}>{genre.name}</span>
+            : <span key={genre.games_count || i}>{`, ${genre.name}`}</span>
           ))}
-          <img width={420} height={300} src={game.image} alt={game.name} />
+    </ul>
         </React.Fragment>
       ))}
-    </ul>
+    </div>
   </>
   )
 }

@@ -28,3 +28,19 @@
   border: 1px solid #152684;
   color: white;
 }
+
+.gamesList{
+  font-size: 2rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 420px);
+  gap: 30px; /* separacion entre columnas */
+  justify-content: center;
+  padding: 1%;
+}
+
+.gameImage{
+  border-radius: 15px;
+  border-color:white;
+  border-style:groove 
+}

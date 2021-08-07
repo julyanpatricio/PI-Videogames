@@ -1,4 +1,3 @@
-import { sort } from "../funciones/sort";
 
 const initialState = {
   games: [],

@@ -12,14 +12,14 @@ const getGames = async (next) => { // viene de /videogames
   try {
     
   
-  // let [gamesApi,gamesApi2,gamesApi3,gamesApi4,gamesApi5, gamesDb] = await Promise.all(
-  let [gamesApi, gamesDb] = await Promise.all(
+  let [gamesApi,gamesApi2,gamesApi3,gamesApi4,gamesApi5, gamesDb] = await Promise.all(
+  // let [gamesApi, gamesDb] = await Promise.all(
     [
       axios.get(`${URLapiGames}?${KEY_API}`),
-      // axios.get(`${URLapiGames}?${KEY_API}&page=2`),
-      // axios.get(`${URLapiGames}?${KEY_API}&page=3`),
-      // axios.get(`${URLapiGames}?${KEY_API}&page=4`),
-      // axios.get(`${URLapiGames}?${KEY_API}&page=5`),
+      axios.get(`${URLapiGames}?${KEY_API}&page=2`),
+      axios.get(`${URLapiGames}?${KEY_API}&page=3`),
+      axios.get(`${URLapiGames}?${KEY_API}&page=4`),
+      axios.get(`${URLapiGames}?${KEY_API}&page=5`),
 
       // Videogame.findAll({include: 'genres'})
       Videogame.findAll({
@@ -30,7 +30,7 @@ const getGames = async (next) => { // viene de /videogames
       })
     ])
     
-    // let gamesApi100 = gamesApi.data.results.concat(gamesApi2.data.results,gamesApi3.data.results,gamesApi4.data.results,gamesApi5.data.results)
+    let gamesApi100 = gamesApi.data.results.concat(gamesApi2.data.results,gamesApi3.data.results,gamesApi4.data.results,gamesApi5.data.results)
     
   // let gamesApi100 = gamesJsonGiant.results //comentar esta lineas y descomentar las de arriba cuando de arregle la api  
   
@@ -43,8 +43,8 @@ const getGames = async (next) => { // viene de /videogames
       // }
       
     // const gamesApi100 = []
-    // gamesApi100 = gamesApi100.map(game => {
-    gamesApi100 = gamesApi.data.results.map(game => {
+    gamesApi100 = gamesApi100.map(game => {
+    // gamesApi100 = gamesApi.data.results.map(game => {
     // gamesApi.data.results.some(game => {
       let aux = {
         id: game.id,

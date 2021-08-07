@@ -1,5 +1,6 @@
 import axios from "axios";
-import { sort } from "../funciones/sort";
+// import { sort } from "../funciones/sort";
+import {filter} from '../funciones/filter'
 
 export function getGames(name) {
   return function(dispatch) {

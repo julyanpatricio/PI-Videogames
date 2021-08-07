@@ -1,10 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getGames } from "../actions";
+import { Link } from 'react-router-dom'
 import LandingPage from '../landingPage.jpg'
 
 function Nav() {
+  const dispatch = useDispatch();
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    dispatch(getGames())
+    }
+
   return (
     <div>
+      <button className='button' onClick={handleSubmit}>
+      <Link to="/games">GAMES</Link>
+      </button>
       <img src={LandingPage} alt="landing page" />
     </div>
   );

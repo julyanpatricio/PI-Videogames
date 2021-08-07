@@ -21,15 +21,17 @@ function MostrarBotonFilt() {
       ...filtrado,
       [e.target.name]: e.target.value
     }))
-    if(e.target.name === 'tipoReal') {
-      dispatch(filterGames( filter(gamesSinFIltro, filtrado.tipoGenero, filtrado.tipoReal)))
-      mostrarFiltrado()
-    }
   }
-
+  
   function mostrarFiltrado(){
     setMostrarFiltrado(!botonFiltrado)
   }
+  
+  useEffect(() => {
+    let filtrados = filter(gamesSinFIltro, filtrado.tipoGenero, filtrado.tipoReal)
+    dispatch(filterGames( filtrados))
+  }, [filtrado.tipoGenero,filtrado.tipoReal,dispatch,gamesSinFIltro])
+
 
   return (
     <div className='dropdown'>
