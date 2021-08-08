@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { getGames } from "../actions";
+import { getGames, getGenres } from "../actions";
 import { Link } from 'react-router-dom'
 import LandingPage from '../landingPage.jpg'
 
@@ -10,6 +10,7 @@ function Nav() {
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(getGames())
+    dispatch(getGenres())
     }
 
   return (

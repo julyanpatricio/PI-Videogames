@@ -34,8 +34,6 @@ function MostrarBotonOrd() {
 
   return (
     <div className='dropdown'>
-      <div className='title pointerCursor'>Seleccione una opción <i className="fa fa-angle-right"></i></div>
-      
       <button className={`button button-primary button-primary-${botonOrdenamiento ? 'active' : 'inactive'}`} onClick={mostrarOrdenamiento}>
           Ordenar juegos
       </button>

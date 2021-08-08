@@ -18,10 +18,10 @@ function Games() {
   //   dispatch(getGames());
   // }, [dispatch]);
 
-  useEffect(() => {
-    console.log('usseefect')
-    dispatch(getGames()); //trae una nueva lista de juegos
-  }, [dispatch]);
+  // useEffect(() => {
+  //   console.log('usseefect')
+  //   dispatch(getGames()); //trae una nueva lista de juegos
+  // }, [dispatch]);
 
   const [gameSearch, setGameSearch] = useState({
     name: ''
@@ -64,7 +64,6 @@ function Games() {
 
     <MostrarBotonOrd />
     <MostrarBotonFilt />
-    <Pagination />
     
     <hr />
     <div className='gamesList'>
@@ -80,11 +79,12 @@ function Games() {
           {game.genres.map((genre,i) => (
             i === 0? <span key={genre.games_count || i}>{genre.name}</span>
             : <span key={genre.games_count || i}>{`, ${genre.name}`}</span>
-          ))}
+            ))}
     </ul>
         </React.Fragment>
       ))}
     </div>
+      <Pagination />
     
   </>
   )

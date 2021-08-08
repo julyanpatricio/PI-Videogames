@@ -30,7 +30,7 @@ function Pagination () {
       startIndex: (page - 1) * state.gamesForPage,
       endIndex: page * state.gamesForPage
     }))
-    console.log('deberia despachar una accion', page, (page - 1) * state.gamesForPage, page * state.gamesForPage);
+    // console.log('deberia despachar una accion', page, (page - 1) * state.gamesForPage, page * state.gamesForPage);
   }
 
   function getPager() {

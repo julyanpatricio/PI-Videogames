@@ -6,14 +6,14 @@ import {sort} from '../funciones/sort'
 import {filter} from '../funciones/filter'
 
 function MostrarBotonFilt() {
-  const gamesSinFIltro = useSelector((state) => state.gamesSinFIltro);
+  const [gamesSinFIltro, genres] = useSelector((state) => [state.gamesSinFIltro, state.genres]);
   const dispatch = useDispatch();
 
   const [botonFiltrado, setMostrarFiltrado] = useState(false)
 
   const [filtrado, setFiltrado] = useState({
     tipoGenero: '', //alfabeticamente o por rating
-    tipoReal: 'Ambos' //descendente o ascendente
+    tipoReal: 'Ambos', //descendente o ascendente
   })
 
   function handleChangeFilt(e) {
@@ -27,35 +27,35 @@ function MostrarBotonFilt() {
     setMostrarFiltrado(!botonFiltrado)
   }
   
-  useEffect(() => {
+  function realizarFiltrado(){
     let filtrados = filter(gamesSinFIltro, filtrado.tipoGenero, filtrado.tipoReal)
-    dispatch(filterGames( filtrados))
-  }, [filtrado.tipoGenero,filtrado.tipoReal,dispatch,gamesSinFIltro])
+    dispatch(filterGames(filtrados))
+    // return filtrados
+  }
+
+  useEffect(() => {
+    realizarFiltrado()
+  }, [filtrado.tipoGenero, filtrado.tipoReal])
 
 
   return (
+      <React.Fragment>
     <div className='dropdown'>
-      <div className='title pointerCursor'>Seleccione una opción <i className="fa fa-angle-right"></i></div>
-      
+         
       <button className={`button button-primary button-primary-${botonFiltrado ? 'active' : 'inactive'}`} onClick={mostrarFiltrado}>
           Filtrar juegos
       </button>
+      <button className='button' hidden={!botonFiltrado} onClick={handleChangeFilt}
+        name='tipoGenero' value=''
+        >Todos</button>
+      
+      {genres && genres.map((genre) =>(
         <button className='button' hidden={!botonFiltrado} onClick={handleChangeFilt}
-        name='tipoGenero' value='Action'
-        >Action</button>
-        <button className='button' hidden={!botonFiltrado} onClick={handleChangeFilt}
-        name='tipoGenero' value='Shooter'
-        >Shooter</button>
-        <button className='button' hidden={!(botonFiltrado)} onClick={handleChangeFilt}
-        name='tipoReal' value='Real'
-        >Real</button>
-        <button className='button' hidden={!(botonFiltrado )} onClick={handleChangeFilt}
-        name='tipoReal' value='Creado'
-        >Creado</button>
-        <button className='button' hidden={!(botonFiltrado )} onClick={handleChangeFilt}
-        name='tipoReal' value='Ambos'
-        >Ambos</button>
+        name='tipoGenero' value={genre.name} key={genre.id}
+        >{genre.name}</button>
+        ))}
 	  </div>
+        </React.Fragment>
 
   )
 };

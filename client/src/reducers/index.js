@@ -3,6 +3,7 @@ const initialState = {
   games: [],
   gamesSinFIltro:[],
   game: undefined,
+  genres: '',
   n_Sort:0,
   n_Filter:0,
 
@@ -18,17 +19,21 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
 
-  console.log('accion recibida, actualizando estado con', action.payload);
   switch(action.type){
 
-  case "CHANGE_PAGE":
-    return {
-      ...state,
-      currentPage:action.payload.currentPage,
-      startIndex:action.payload.startIndex,
-      endIndex:action.payload.endIndex,
-      
-    }      
+    case "CHANGE_PAGE":
+      return {
+        ...state,
+        currentPage:action.payload.currentPage,
+        startIndex:action.payload.startIndex,
+        endIndex:action.payload.endIndex,
+      }      
+
+    case "GET_GENRES":
+      return {
+        ...state,
+        genres: action.payload
+      }
 
     case "GET_GAMES":
       return {
@@ -36,12 +41,10 @@ function rootReducer(state = initialState, action) {
       games: action.payload,
       gamesSinFIltro: action.payload,
       totalGames: action.payload.length,
-      pagesToShow: 5,
       totalPages: Math.ceil(action.payload.length / state.gamesForPage),
       currentPage:1,
       startIndex:0,
       endIndex:9
-
     }
     
     case "GET_GAME_DETAIL":
@@ -55,14 +58,22 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
       games: action.payload,
-      n_Sort: ++state.n_Sort
+      n_Sort: ++state.n_Sort,
+      currentPage:1,
+      startIndex:0,
+      endIndex:9
       }
 
     case "FILTER_GAMES":
       return {
         ...state,
         games: action.payload,
-        n_Filter: ++state.n_Filter
+        n_Filter: ++state.n_Filter,
+        totalGames: action.payload.length,
+        totalPages: Math.ceil(action.payload.length / state.gamesForPage),
+        currentPage:1,
+        startIndex:0,
+        endIndex:9
       }
 
     default:

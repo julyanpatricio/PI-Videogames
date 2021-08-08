@@ -11,6 +11,15 @@ export function getGames(name) {
   };
 }
 
+export function getGenres(){
+  return function(dispatch){
+    return axios.get('/genres')
+    .then(json => {
+      dispatch({type: "GET_GENRES", payload: json.data})
+    })
+  }
+}
+
 export function getGameDetail(id){
   return function(dispatch) {
     return axios.get(`/videogame/${id}`) 
@@ -20,12 +29,11 @@ export function getGameDetail(id){
       .catch(error => {
             return dispatch({ type: "GET_GAME_DETAIL", payload: null })
           })
-
   };
 }
 
 export function changePage({currentPage,startIndex,endIndex}){
-  console.log('despachando accion con', currentPage,startIndex,endIndex);
+  // console.log('despachando accion con', currentPage,startIndex,endIndex);
   return {
     type: "CHANGE_PAGE",
     payload: {currentPage,startIndex,endIndex}
