@@ -13,7 +13,7 @@ function App() {
     <>
     <div className="App">
       <h1>Henry Videogames</h1>
-    </div>
+    
     <Route path="/" component={Nav} />
     <Route path="/" exact component={Landing} />
       <div className="container content">
@@ -23,7 +23,8 @@ function App() {
           <Route path="/game/:id" exact component={Game} />
         </Switch>
       </div>
-      <hr />
+      </div>
+      
     </>
   );
 }

@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom'
 import './Games.css'
 import MostrarBotonOrd from "./BotonesOrdenamiento";
 import MostrarBotonFilt from "./botonesFiltrado";
+import Pagination from "./pagination";
 
 
 
 function Games() {
-  const [games] = useSelector((state) => [state.games]);
+  const [games,startIndex,endIndex] = useSelector((state) => [state.games,state.startIndex,state.endIndex]);
   const dispatch = useDispatch();
   
   // useEffect(() => {
@@ -25,6 +26,11 @@ function Games() {
   const [gameSearch, setGameSearch] = useState({
     name: ''
   });
+
+  const [pagination, setPagination] = useState({
+    showFrom:0,
+    showUp:9
+  })
   
 
   function handleChange(e) {
@@ -58,10 +64,11 @@ function Games() {
 
     <MostrarBotonOrd />
     <MostrarBotonFilt />
-    <h3>Games</h3>
+    <Pagination />
+    
     <hr />
     <div className='gamesList'>
-      {games.map((game) => (
+      {games.slice(startIndex,endIndex).map((game) => (
         <React.Fragment key={game.id}>
           <ul className="list-unstyled">
         <Link to={`/game/${game.id}`}>
@@ -78,6 +85,7 @@ function Games() {
         </React.Fragment>
       ))}
     </div>
+    
   </>
   )
 }

@@ -4,8 +4,8 @@ const {Genre,Videogame} = require('../db')
 const {URLapiGames, URLapiGameSearch, URLapiGenres } = require('../../constantes-api')
 const {KEY_API} = process.env;
 const axios = require ('axios')
-const gamesJson = require('../../../../GAMES.json')
-const gamesJsonGiant = require('../../GAMESGIANTBOMB.json')
+// const gamesJson = require('../../../../GAMES.json')
+// const gamesJsonGiant = require('../../GAMESGIANTBOMB.json')
 
 const getGames = async (next) => { // viene de /videogames
 

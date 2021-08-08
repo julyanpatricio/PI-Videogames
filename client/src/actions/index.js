@@ -1,6 +1,5 @@
 import axios from "axios";
-// import { sort } from "../funciones/sort";
-import {filter} from '../funciones/filter'
+
 
 export function getGames(name) {
   return function(dispatch) {
@@ -23,6 +22,14 @@ export function getGameDetail(id){
           })
 
   };
+}
+
+export function changePage({currentPage,startIndex,endIndex}){
+  console.log('despachando accion con', currentPage,startIndex,endIndex);
+  return {
+    type: "CHANGE_PAGE",
+    payload: {currentPage,startIndex,endIndex}
+  }
 }
 
 export function clearPage() {
