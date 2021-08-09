@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { filterGames, getGames, sortGames } from "../actions";
+import { filterGames} from "../actions";
 import './Games.css'
-import {sort} from '../funciones/sort'
+
 import {filter} from '../funciones/filter'
 
 function MostrarBotonFilt() {
@@ -26,25 +26,19 @@ function MostrarBotonFilt() {
   function mostrarFiltrado(){
     setMostrarFiltrado(!botonFiltrado)
   }
-  
-  function realizarFiltrado(){
-    let filtrados = filter(gamesSinFIltro, filtrado.tipoGenero, filtrado.tipoReal)
-    dispatch(filterGames(filtrados))
-    // return filtrados
-  }
 
   useEffect(() => {
-    realizarFiltrado()
-  }, [filtrado.tipoGenero, filtrado.tipoReal])
-
+    let filtrados = filter(gamesSinFIltro, filtrado.tipoGenero, filtrado.tipoReal)
+    dispatch(filterGames(filtrados))
+  }, [filtrado.tipoGenero, filtrado.tipoReal,gamesSinFIltro,dispatch])
 
   return (
-      <React.Fragment>
-    <div className='dropdown'>
+    <React.Fragment>
          
       <button className={`button button-primary button-primary-${botonFiltrado ? 'active' : 'inactive'}`} onClick={mostrarFiltrado}>
           Filtrar juegos
       </button>
+    <div className='dropdown'>
       <button className='button' hidden={!botonFiltrado} onClick={handleChangeFilt}
         name='tipoGenero' value=''
         >Todos</button>
@@ -54,6 +48,15 @@ function MostrarBotonFilt() {
         name='tipoGenero' value={genre.name} key={genre.id}
         >{genre.name}</button>
         ))}
+      <button className='button' hidden={!(botonFiltrado)} onClick={handleChangeFilt}
+        name='tipoReal' value='Real'
+        >Real</button>
+        <button className='button' hidden={!(botonFiltrado )} onClick={handleChangeFilt}
+        name='tipoReal' value='Creado'
+        >Creado</button>
+        <button className='button' hidden={!(botonFiltrado )} onClick={handleChangeFilt}
+        name='tipoReal' value='Ambos'
+        >Ambos</button>
 	  </div>
         </React.Fragment>
 

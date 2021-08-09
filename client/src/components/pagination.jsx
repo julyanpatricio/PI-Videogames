@@ -1,6 +1,6 @@
 
 
-import React, { Component, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changePage } from "../actions";
 import './pagination.css'

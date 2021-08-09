@@ -58,7 +58,6 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
       games: action.payload,
-      n_Sort: ++state.n_Sort,
       currentPage:1,
       startIndex:0,
       endIndex:9
@@ -68,7 +67,6 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         games: action.payload,
-        n_Filter: ++state.n_Filter,
         totalGames: action.payload.length,
         totalPages: Math.ceil(action.payload.length / state.gamesForPage),
         currentPage:1,

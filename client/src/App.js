@@ -10,22 +10,21 @@ import Landing from './components/Landing'
 
 function App() {
   return (
-    <>
+    
     <div className="App">
-      <h1>Henry Videogames</h1>
     
     <Route path="/" component={Nav} />
     <Route path="/" exact component={Landing} />
-      <div className="container content">
+      
         <Route path="/games" exact component={Games} />
         <Switch>
           <Route path="/game/add" exact component={AddGame} />
           <Route path="/game/:id" exact component={Game} />
         </Switch>
-      </div>
+      
       </div>
       
-    </>
+    
   );
 }
 
