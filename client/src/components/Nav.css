@@ -3,6 +3,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    color: aliceblue;
     background-color: #303236;
     display: flex;
     justify-content: space-between;
@@ -16,7 +17,7 @@
 }
 
 .list {
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
     list-style: none;
     display: flex;

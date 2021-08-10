@@ -10,50 +10,32 @@ function Pagination () {
     const state = useSelector(state=>state)
     const dispatch = useDispatch()
   
-//   totalGames: 9,
-//   gamesForPage: 9, //cantidad de juegos a mostrar por pagina
-//   totalPages: Math.ceil(totalGames / pageLimit),
-//   state.pagesToShow: 5,
-//   currentPage: 1,
-//   startIndex:0,
-//   endIndex:9
-  
+
   function setPage(page) {
-    if (page < 1) {
-      page = 1;
-    } else if (page > state.totalPages) {
-      page = state.totalPages;
-    }
-    
     dispatch(changePage({
       currentPage: page,
       startIndex: (page - 1) * state.gamesForPage,
       endIndex: page * state.gamesForPage
-    }))
-    // console.log('deberia despachar una accion', page, (page - 1) * state.gamesForPage, page * state.gamesForPage);
+    })) 
   }
 
   function getPager() {
-    var pages = [],
-      startFromNumber;
+    let pages = [],
+      startFromNumber
 
-    if (state.totalPages <= state.pagesToShow) {
-      startFromNumber = 1;
-      state.pagesToShow = state.totalPages;
-    } else {
       if (state.currentPage <= Math.ceil(state.pagesToShow / 2)) {
         startFromNumber = 1;
-      } else if (
-        state.currentPage + Math.floor((state.pagesToShow - 1) / 2) >=
-        state.totalPages
+      } else 
+      if (
+        state.currentPage + Math.floor((state.pagesToShow - 1) / 2) >= state.totalPages
       ) {
         startFromNumber = state.totalPages - (state.pagesToShow - 1);
       } else {
         startFromNumber = state.currentPage - Math.floor(state.pagesToShow / 2);
       }
-    }
+  
 
-    for (let i = 1; i <= state.pagesToShow; i++) {
+    for (var i = 1; i <= state.pagesToShow; i++) {
       pages.push(startFromNumber++);
     }
     
@@ -65,9 +47,6 @@ function Pagination () {
   }
 
   
-    
-      // console.log(pager);
-      
       if (!state.totalPages || state.totalPages === 1) return null
       var pager = getPager()
 

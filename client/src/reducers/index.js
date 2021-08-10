@@ -4,8 +4,6 @@ const initialState = {
   gamesSinFIltro:[],
   game: undefined,
   genres: '',
-  n_Sort:0,
-  n_Filter:0,
 
   totalGames: 9,
   gamesForPage: 9, //cantidad de juegos a mostrar por pagina
@@ -13,7 +11,7 @@ const initialState = {
   pagesToShow: 5,
   currentPage: 1,
   startIndex:0,
-  endIndex:9
+  endIndex:9,
   
 };
 
@@ -42,6 +40,9 @@ function rootReducer(state = initialState, action) {
       gamesSinFIltro: action.payload,
       totalGames: action.payload.length,
       totalPages: Math.ceil(action.payload.length / state.gamesForPage),
+      pagesToShow: Math.ceil(action.payload.length / state.gamesForPage) < 5 ?
+                    Math.ceil(action.payload.length / state.gamesForPage) 
+                    : 5,
       currentPage:1,
       startIndex:0,
       endIndex:9

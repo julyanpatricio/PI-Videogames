@@ -1,12 +1,10 @@
-import React,{useEffect, useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getGames } from "../actions";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom'
 import './Games.css'
 
 function GamesList() {
-const [games,startIndex,endIndex] = useSelector((state) => [state.games,state.startIndex,state.endIndex]);
-  const dispatch = useDispatch();
+const {games,startIndex,endIndex} = useSelector((state) => state);
 
 return (
 <div className='gamesList'>

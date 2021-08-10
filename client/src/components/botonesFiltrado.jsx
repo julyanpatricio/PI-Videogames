@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React,{ useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterGames} from "../actions";
 import './Games.css'
@@ -16,21 +16,18 @@ function MostrarBotonFilt() {
     tipoReal: 'Ambos', //descendente o ascendente
   })
 
+  function mostrarFiltrado(){
+    setMostrarFiltrado(!botonFiltrado)
+  }
+
   function handleChangeFilt(e) {
     setFiltrado(filtrado => ({
       ...filtrado,
       [e.target.name]: e.target.value
     }))
+    if(e.target.name === 'tipoGenero') dispatch(filterGames(filter(gamesSinFIltro, e.target.value, filtrado.tipoReal)))
+    if(e.target.name === 'tipoReal') dispatch(filterGames(filter(gamesSinFIltro, filtrado.tipoGenero, e.target.value)))
   }
-  
-  function mostrarFiltrado(){
-    setMostrarFiltrado(!botonFiltrado)
-  }
-
-  useEffect(() => {
-    let filtrados = filter(gamesSinFIltro, filtrado.tipoGenero, filtrado.tipoReal)
-    dispatch(filterGames(filtrados))
-  }, [filtrado.tipoGenero, filtrado.tipoReal,gamesSinFIltro,dispatch])
 
   return (
     <React.Fragment>
