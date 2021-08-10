@@ -4,6 +4,7 @@ const initialState = {
   gamesSinFIltro:[],
   game: undefined,
   genres: '',
+  platforms:['PC', 'PSone', 'PS2', 'PS3', 'PS4', 'PS5', 'Xbox', 'Xbox360', 'Xbox One', 'Nintendo', 'Sega Genesis', 'Wii'],
 
   totalGames: 9,
   gamesForPage: 9, //cantidad de juegos a mostrar por pagina
