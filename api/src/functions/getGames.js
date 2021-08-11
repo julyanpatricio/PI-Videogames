@@ -34,7 +34,6 @@ const getGames = async (next) => { // viene de /videogames
     
   // let gamesApi100 = gamesJsonGiant.results //comentar esta lineas y descomentar las de arriba cuando de arregle la api  
   
-
     //por si no se puede usar el endpond de las page...
     // while((gamesApi.data.results.length) < 100){
       //   let nextPage = await axios.get(`${gamesApi.data.next}&${KEY_API}`)
@@ -52,7 +51,7 @@ const getGames = async (next) => { // viene de /videogames
         image: game.image || game.background_image,
         rating: game.rating,
         genres: game.genres,
-        platforms: game.platforms
+        platforms: game.platforms.map(p => p.platform.name)
       }
       // gamesApi100.push(aux)
       return aux

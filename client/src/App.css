@@ -1,7 +1,34 @@
+html{
+  background:
+      repeating-linear-gradient(190deg, rgba(105, 2, 2, 0.5) 40px,
+        rgba(19, 11, 0, 0.5) 80px, rgba(80, 8, 8, 0.5) 120px,
+        rgba(1, 53, 1, 0.5) 160px, rgba(15, 15, 53, 0.5) 200px,
+        rgba(46, 39, 51, 0.5) 240px, rgba(68, 1, 68, 0.5) 280px,
+        rgba(19, 10, 53, 0.5) 300px),
+      repeating-linear-gradient(-190deg, rgba(105, 2, 2, 0.5) 40px,
+      rgba(19, 11, 0, 0.5) 80px, rgba(80, 8, 8, 0.5) 120px,
+      rgba(1, 53, 1, 0.5) 160px, rgba(15, 15, 53, 0.5) 200px,
+      rgba(46, 39, 51, 0.5) 240px, rgba(68, 1, 68, 0.5) 280px,
+      rgba(19, 10, 53, 0.5) 300px),
+      repeating-linear-gradient(23deg, rgb(61, 0, 0) 50px, rgb(61, 61, 60) 100px,
+        rgb(36, 36, 1) 150px, rgb(1, 43, 1) 200px, rgb(15, 15, 43) 250px,
+        rgb(45, 31, 56) 300px, rgb(44, 25, 44) 350px, rgb(58, 0, 0) 370px);
+}
+
+html, body, #root{
+  height: 100%;
+}
+
 .App {
   text-align: center;
-  background-image: linear-gradient(135deg, rgb(0, 0, 0),rgb(141, 0, 141));
 }
+
+
+/* body {
+  background-color: transparent;
+  background: url('./landingPage.jpg') no-repeat center center fixed;
+  background-size: cover;
+} */
 
 .App-logo {
   height: 40vmin;

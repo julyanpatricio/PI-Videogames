@@ -45,6 +45,7 @@ function MostrarBotonFilt() {
         name='tipoGenero' value={genre.name} key={genre.id}
         >{genre.name}</button>
         ))}
+        <p></p>
       <button className='button' hidden={!(botonFiltrado)} onClick={handleChangeFilt}
         name='tipoReal' value='Real'
         >Real</button>

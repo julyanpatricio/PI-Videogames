@@ -1,16 +1,16 @@
 
 
-#form {
-  width: 250px;
+form {
+  width: 100%;
   margin: 0 auto;
-  height: 50px;
+  height: 100%;
 }
 
 #form p {
   text-align: center;
 }
 
-#form label {
+form label {
   font-size: 20px;
 }
 
@@ -19,19 +19,23 @@ input[type="radio"] {
 }
 
 label {
-  color: grey;
+  color: white;
 }
 
-.rating {
-  direction: rtl;
-  unicode-bidi: bidi-override;
+.rating { /* invierto las estrellas del rating para poder seleccionar todos los elementos de procedan a determinara etiqueta,id, etc */
+  direction: rtl; /* right to left */
+  unicode-bidi: bidi-override; /* bidi de bidireccional */
 }
 
-label:hover,
-label:hover ~ label {
+/* #estrellas:hover{
+  color:orange;
+} */
+
+#estrellas:hover,
+#estrellas:hover ~ #estrellas {
   color: orange;
 }
 
-input[type="radio"]:checked ~ label {
+input[type="radio"]:checked ~ #estrellas {
   color: orange;
 }

@@ -43,10 +43,11 @@ function MostrarBotonOrd() {
         <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
         name='modo' value='Por rating'
         >Por rating</button>
-        <button className='button' hidden={!(botonOrdenamiento && ordenamiento.modo)} onClick={handleChangeOrd}
+        <p></p>
+        <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
         name='direccion' value='Ascendente'
         >ascendente</button>
-        <button className='button' hidden={!(botonOrdenamiento && ordenamiento.modo)} onClick={handleChangeOrd}
+        <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
         name='direccion' value='Descendente'
         >descendente</button>
       </div>
