@@ -15,7 +15,7 @@ function Games() {
   return (
     <>
         
-    <Search />
+    {/* <Search /> */}
     <MostrarBotonOrd />
     <MostrarBotonFilt />
     <hr />

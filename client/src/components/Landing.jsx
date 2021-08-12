@@ -16,10 +16,12 @@ function Landing() {
 
   return (
     <div className='landing'>
-      <button className='button' onClick={handleSubmit}>
-      <Link to="/games">GAMES</Link>
+      <button className='button-landing  position-absolute' onClick={handleSubmit}>
+      <Link to="/games">
+      Enter the site
+        </Link>
       </button>
-      <img src={LandingPage} width={`${100}%`} height={`${100}%`}  alt="landing page" />
+      <img src={LandingPage}   alt="landing page" />
     </div>
   );
 }

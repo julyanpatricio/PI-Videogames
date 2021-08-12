@@ -1,11 +1,32 @@
-
+img{
+  width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+.position-absolute {
+  position: absolute !important;
+}
 
 .landing {
   /* background: url('../landingPage.jpg') no-repeat center center fixed;
   background-size: 100% auto; */
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
   background-image: none;
+  display: flex;
+  justify-content: center;
 }
 
-.button{
+.button-landing{
   background-image: none;
+  cursor: pointer;
+  padding: .6rem 1.5rem;
+  /* margin: 40% -2.2%; */
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .8rem;
+    border-style: groove;
+    -webkit-appearance: button;
+    bottom: 20%;
+    left:48%;
 }

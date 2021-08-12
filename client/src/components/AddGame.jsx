@@ -29,8 +29,8 @@ function AddGame() {
       ...values,
       [e.target.name]: e.target.name !== 'genres' && e.target.name !== 'platforms' ? e.target.value :
         e.target.name === 'genres'
-          ? !values.genres.includes(e.target.value)
-            ? [...values.genres, parseInt(e.target.value)] : values.genres.filter(genre => genre !== e.target.value)
+          ? !values.genres.includes(parseInt(e.target.value)  )
+            ? [...values.genres, parseInt(e.target.value)] : values.genres.filter(genre => genre !== parseInt(e.target.value))
           : !values.platforms.includes(e.target.value)
             ? [...values.platforms, e.target.value] : values.platforms.filter(platform => platform !== e.target.value)
     }))
@@ -67,8 +67,10 @@ function AddGame() {
     return errors;
   };
 
+
+
   return (
-    <>
+    
       <React.Fragment>
         <h3>Add a Game</h3>
         <hr />
@@ -79,7 +81,7 @@ function AddGame() {
             </label>
             <div className="">
               <input onChange={handleChange} value={values.name} name="name" type="text" className={errors.name && 'has-error form-control'} />
-              {errors.name && ( //si existe errors.username, se agregara un elemento p con el contenido del error
+              {errors.name && ( //si existe errors.name, se agregara un elemento p con el contenido del error
                 <p className="has-error">{errors.name}</p>
               )}
             </div>
@@ -92,7 +94,7 @@ function AddGame() {
             </label>
             <div className="">
               <input onChange={handleChange} value={values.description} name="description" type="text" className={errors.description && 'has-error form-control'} required />
-              {errors.description && ( 
+              {errors.description && (
                 <p className="has-error">{errors.description}</p>
               )}
             </div>
@@ -129,44 +131,45 @@ function AddGame() {
             </div>
           </div>
 
-
-          <div className="form-group">
-            <label htmlFor="platforms" className={errors.platforms && 'has-error control-label'}>
-              Platforms
-            </label>
-            <div className="">
-              {platforms.map((platform, i) =>
-                <label className='checkbox-inline' htmlFor={platform} key={i}>
-                  {platform}
-                  <input id={platform} onChange={handleChange} type="checkbox" className='checkbox-inline' value={platform} name="platforms"
-                    />
-                </label>
-              )}
-              {errors.platforms && ( 
-                <p className="has-error">{errors.platforms}</p>
-              )}
-            </div>
-          </div>
-
-
           <div className="form-group">
             <label htmlFor="image" className=" control-label">
               Image
             </label>
             <div className="">
-              <input onChange={handleChange}  name="image" type="text" className="form-control" />
+              <input onChange={handleChange} name="image" type="text" className="form-control" />
             </div>
           </div>
+
+          <div className="form-group">
+            <label htmlFor="platforms" className={errors.platforms && 'has-error control-label'}>
+              Platforms
+            </label>
+            <div className="platforms">
+              {platforms.map((platform, i) =>
+                <label id='platforms' className={`checkbox-inline badge-pill badge-${values.platforms.includes(platform) ? 'warning' : 'dark-light'}`} htmlFor={platform} key={i}>
+                  {platform}
+                  <input id={platform} onChange={handleChange} type="checkbox" className='checkbox-inline' value={platform} name="platforms"
+                  />
+                </label>
+              )}
+            </div>
+              {errors.platforms && (
+                <p className="has-error">{errors.platforms}</p>
+              )}
+          </div>
+
           <div className="form-group">
             <label htmlFor="genres" className="control-label">
               Genres
             </label>
-            {genres.map(genre =>
-              <label htmlFor={`genre-${genre.id}`} className='checkbox-inline' key={genre.id}>
-                {genre.name}
-                <input onChange={handleChange} id={`genre-${genre.id}`} type="checkbox" className='checkbox-inline' name="genres" value={genre.id} />
-              </label>
-            )}
+            <div className="genres">
+              {genres.map(genre =>
+                <label htmlFor={`genre-${genre.id}`} className={`checkbox-inline badge-pill badge-${values.genres.includes(genre.id) ? 'warning' : 'dark-light'}`} key={genre.id}>
+                  {genre.name}
+                  <input onChange={handleChange} id={`genre-${genre.id}`} type="checkbox" className='checkbox-inline' name="genres" value={genre.id} />
+                </label>
+              )}
+            </div>
           </div>
 
 
@@ -181,7 +184,7 @@ function AddGame() {
           </div>
         </form>
       </React.Fragment>
-    </>
+    
   );
 }
 
