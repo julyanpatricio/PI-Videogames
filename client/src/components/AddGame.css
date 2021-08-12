@@ -2,13 +2,15 @@
 
 form {
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   height: 100%;
+  text-align: center;
+  display: grid;
+  justify-items: center;
 }
 
-#form p {
-  text-align: center;
-}
+/* #form p {
+} */
 
 form label {
   font-size: 20px;
@@ -34,8 +36,34 @@ label {
 #estrellas:hover,
 #estrellas:hover ~ #estrellas {
   color: orange;
+  cursor: pointer;
 }
 
 input[type="radio"]:checked ~ #estrellas {
   color: orange;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+  margin-left: 3px;
+  margin-right: 12px;
+}
+
+
+.radio-inline,
+.checkbox-inline {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bolder;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.has-error
+ {
+   color: red;
+  border-color: red;
+  border-width: thick;
 }

@@ -1,0 +1,8 @@
+.game-detail {
+  font-size: 40px;
+  color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgb(238, 255, 0);
+  background-color: rgb(27, 27, 27);
+}

@@ -13,6 +13,7 @@ function GamesList() {
   // Géneros
 
   return (
+    
     <div className='gamesList'>
       {games.slice(startIndex, endIndex).map((game, i) => (
         <React.Fragment key={game.id}>

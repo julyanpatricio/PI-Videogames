@@ -2,6 +2,7 @@ import React,{useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { clearPage, getGameDetail } from "../actions";
+import './Game.css'
 
 
 function Game() {
@@ -15,14 +16,22 @@ function Game() {
     return () => dispatch(clearPage()) //cuando se desmonta, limpia el componente
   }, [id, dispatch]);
   
-  
+  /**
+   * Ruta de detalle de videojuego: debe contener
+
+[ ] Los campos mostrados en la ruta principal para cada videojuegos (imagen, nombre, y géneros)
+[ ] Descripción
+[ ] Fecha de lanzamiento
+[ ] Rating
+[ ] Plataformas
+   */
+
   return (
-    <div>
+    <div className='game-detail'>
       {game ? (
         <>
-          <h3>{game.name}</h3>
-          <hr />
-          <h4>Genres</h4>
+          <h1>{game.name}</h1>
+          
           {game.genres.map((genre,i) => (
             <p key={genre.games_count || i}>{genre.name}</p>
           ))}
