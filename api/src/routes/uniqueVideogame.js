@@ -7,6 +7,15 @@ const axios = require ('axios')
 const { v4: uuidv4 } = require('uuid');
 const isUUID = require('is-uuid');
 
+/**
+ * Ruta de detalle de videojuego: debe contener
+
+[ ] Los campos mostrados en la ruta principal para cada videojuegos (imagen, nombre, y géneros)
+[ ] Descripción
+[ ] Fecha de lanzamiento
+[ ] Rating
+[ ] Plataformas
+ */
 
 router.get('/:id', async (req, res, next) => { // viene de /videogame
   const {id} = req.params
@@ -28,7 +37,8 @@ router.get('/:id', async (req, res, next) => { // viene de /videogame
       description: game.description,
       released: game.released,
       rating:game.rating,
-      genres: game.genres 
+      genres: game.genres,
+      platforms: game.platforms
     })
   } catch (error) {
     next(error)

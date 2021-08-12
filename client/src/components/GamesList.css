@@ -1,0 +1,149 @@
+
+
+
+.gamesList{
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+  font-size: 2rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 420px);
+  gap: 4%; /* separacion entre columnas */
+  justify-content: center;
+  padding: 1%;
+}
+
+.gameImage{
+  border-radius: 15px;
+  border-color:white;
+  border-style:groove 
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-size: 20px;
+}
+
+.card-background {
+  border-width: thick;
+  border-radius: 0px 200px 0px 0px;
+  border-right: 5px solid #ffc107;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card-img-top {
+  width: -webkit-fill-available;
+  object-fit: cover;
+}
+
+.h2-position {
+  left: 2%;
+  top: 65%;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.mt-4,
+.my-4 {
+  margin-top: 1.5rem !important;
+}
+
+.badge-position {
+  left: 2%;
+  top: 4%;
+}
+
+.badge-dark {
+  color: #fff;
+  background-color: #343a40;
+}
+
+a.badge-dark:hover, a.badge-dark:focus {
+  color: #fff;
+  background-color: #1d2124;
+}
+
+a.badge-dark:focus, a.badge-dark.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+
+.badge-warning {
+  color: #212529;
+  background-color: #ffc107;
+}
+
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+
+
+.genre-badge-position {
+  left: 3%;
+  top: 75%;
+}
+
+.genre-badge-margin {
+  margin-right: 0.2em;
+}
+
+.right-badge {
+  right: 2%;
+  top: -3%;
+}
+
+.loading-anim-size {
+  width: 5rem;
+  height: 5rem;
+}
+
+.img-zoom-container {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  height: 250px;
+  display: block;
+  position: relative;
+  transition: all 2s ease-out;
+}
+
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
+
+.border-0 {
+  border: 0 !important;
+}
+
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+.text-white {
+  color: #fff !important;
+}

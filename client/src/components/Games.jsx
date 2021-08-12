@@ -18,8 +18,8 @@ function Games() {
     <Search />
     <MostrarBotonOrd />
     <MostrarBotonFilt />
-    <Pagination />
     <hr />
+    <Pagination />
     <GamesList />
     
   </>

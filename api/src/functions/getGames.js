@@ -45,10 +45,11 @@ const getGames = async (next) => { // viene de /videogames
     gamesApi100 = gamesApi100.map(game => {
     // gamesApi100 = gamesApi.data.results.map(game => {
     // gamesApi.data.results.some(game => {
+
       let aux = {
         id: game.id,
         name: game.name,
-        image: game.image || game.background_image,
+        image: game.image || game.background_image.replace('/media/games/', '/media/resize/420/-/games/'),
         rating: game.rating,
         genres: game.genres,
         platforms: game.platforms.map(p => p.platform.name)

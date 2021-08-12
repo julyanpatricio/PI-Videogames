@@ -1,7 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom'
-import './Games.css'
+// import './Games.css'
+import './GamesList.css'
+// import '../App.css'
 
 function GamesList() {
   const { games, startIndex, endIndex } = useSelector((state) => state);
@@ -12,20 +14,33 @@ function GamesList() {
 
   return (
     <div className='gamesList'>
-      {games.slice(startIndex, endIndex).map((game) => (
+      {games.slice(startIndex, endIndex).map((game, i) => (
         <React.Fragment key={game.id}>
-          <ul className="list-unstyled">
-            <Link to={`/game/${game.id}`}>
-              <h4>{game.name}</h4>
-            </Link>
-            <img className='gameImage' width={420} height={300} src={game.image} alt={game.name} />
-
-            <span>Genres: </span>
-            {game.genres.map((genre, i) => (
-              i === 0 ? <span key={genre.games_count || i}>{genre.name}</span>
-                : <span key={genre.games_count || i}>{`, ${genre.name}`}</span>
-            ))}
-          </ul>
+          <Link to={`/game/${game.id}`}>
+            <div className='card bg-dark text-white border-0'>
+              <div>
+                <div className='img-zoom img-zoom-container card-background bg-secondary'>
+                  <img className='card-img-top' width={420} height={300} src={game.image} alt={game.name} />
+                </div>
+                <div className='badge-pill badge-warning position-absolute mt-4 right-badge'>★{game.rating}/5</div>
+              </div>
+              <div className='card-body'>
+                <div className='badge-pill badge-dark position-absolute badge-position'>
+                  #<strong>{startIndex + i + 1}</strong>
+                </div>
+              </div>
+              <h2 className='position-absolute h2-position'>
+                {game.name.length > 25 ? `${game.name.substring(0, 23)}...` : game.name}
+              </h2>
+              <div className='position-absolute genre-badge-position'>
+                {game.genres.map((genre, i) => (
+                  <div className='badge badge-dark genre-badge-margin' key={i + 1}>
+                    {genre.name}
+                  </div>
+                ))}
+              </div>              
+            </div>
+          </Link>
         </React.Fragment>
       ))}
     </div>
