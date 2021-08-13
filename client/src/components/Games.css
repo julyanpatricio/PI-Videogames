@@ -1,7 +1,6 @@
 .button {
   padding: .6rem 1.5rem;
-  margin: .4rem;
-  border-radius: 3px;
+  border-radius: 15%;
   text-transform: uppercase;
   font-weight: 600;
   font-size: .8rem;

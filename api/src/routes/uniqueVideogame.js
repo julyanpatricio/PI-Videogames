@@ -34,6 +34,7 @@ router.get('/:id', async (req, res, next) => { // viene de /videogame
       id: game.id,
       name: game.name,
       image: game.background_image || game.image,
+      image_aditional: game.background_image_additional || null,
       description: game.description,
       released: game.released,
       rating:game.rating,
