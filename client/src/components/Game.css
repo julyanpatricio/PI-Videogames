@@ -2,9 +2,14 @@
   
   object-fit: cover;
     width: 48%;
+    height: 40%;
     height: -webkit-fill-available;
     border-radius: 50px;
     margin-left: 2%;
+}
+.description{
+  width: 80%;
+  text-align: left;
 }
 .game-detail {
   padding: 0 0;
@@ -18,21 +23,20 @@
     
     
 }
-.description-container{
-  width: 80%;
-  height: 80%;
-  border-radius: 20px;
-  border: solid;
-  border-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: -webkit-fill-available;
-  background: #000000ba;
+.description-container {
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    border: solid;
+    border-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-direction: column;
+    height: -webkit-fill-available;
+    background: #000000ba;
+    justify-content: space-evenly;
 }
 .description-container-up{
 
@@ -41,14 +45,15 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  height:50%
 }
 .game-information{
-  width: 48%;
-  margin-right: 2%;
-  display: flex;
-    align-items: center;
+  width: 44%;
+    margin-right: 2%;
+    margin-left: 4%;
+    display: flex;
+    align-items: baseline;
     flex-direction: column;
-    justify-content: center;
     flex-wrap: wrap;
 }
 .items-game-information{
@@ -61,7 +66,7 @@
   display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: center;
+    
     flex-wrap: wrap;
 }
 .container-platforms > span{
@@ -71,7 +76,7 @@
 
 .description-container-down{
 
-  text-align: -webkit-left;
+  text-align: -webkit-center;
   margin-inline: 2%;
 }
 

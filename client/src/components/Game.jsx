@@ -41,37 +41,45 @@ function Game() {
           <h1 className='position-absolute badge-title' >{game.name}</h1>
           <div className='description-container'>
             <div className='description-container-up'>
+
               <img className='img-detail' src={game.image} alt={game.name} />
               <div className='game-information'>
+                <div className='released items-game-information'>
+                  Title: {game.name}
 
-              <div className='released items-game-information'>
-              FECHA
+                </div>
+                <div className='released items-game-information'>
+                  Release date: {game.released}
 
-              </div>
+                </div>
 
-              <div className='Rating items-game-information'>
-              RATING
+                <div className='Rating items-game-information'>
+                  Rating: {game.rating}/5
 
-              </div>
+                </div>
 
                 <div className='container-genres items-game-information'>
+                  Genres:
                   {game.genres.map((genre, i) => (
                     <span className='badge-pill badge-dark-light' key={genre.id}>{genre.name}</span>
                   ))}
                 </div>
                 <div className='container-platforms items-game-information'>
+                  Platforms:
                   {game.platforms.map((p, i) =>
-                    <span className='badge-pill badge-dark-light' key={p.platform.id}>
-                      {p.platform.name}
+                    <span className='badge-pill badge-dark-light'
+                      key={i || p.platform?.id}>
+                      {p.platform?.name || p}
                     </span>
                   )}
                 </div>
-                
+
               </div>
             </div>
 
             <div className='description-container-down'>
               <div className='description'>
+                Description: <p></p>
                 {parse(game.description)}
               </div>
 

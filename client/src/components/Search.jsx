@@ -15,12 +15,13 @@ function Search() {
       [e.target.name]: e.target.value
     }))
   }
-
+  
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(getGames(gameSearch.name))
   }
-
+  
+  console.log(gameSearch)
   return (
 
 
