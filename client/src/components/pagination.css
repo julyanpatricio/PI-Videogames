@@ -1,9 +1,6 @@
 li {
   display: inline-block;
 }
-/* ul{
-  display: inline-block;
-} */
 .pagination{
   padding-inline-start:0;
 }
@@ -15,63 +12,45 @@ li {
   padding: 6px 12px;
   margin-left: -1px;
   line-height: 1.42857143;
-  color: #337ab7;
+  color: black;
   text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #343a40;
+  border: 1px double;
+  border-color: black;
   outline: 0;
   list-style:none;
   justify-content: center;
 }
 .pagination > li > button:hover,
-.pagination > li > span:hover,
-.pagination > li > button:focus,
-.pagination > li > span:focus {
+.pagination > li > button:focus,{
   z-index: 2;
-  color: #23527c;
-  background-color: #eee;
-  border-color: #ddd;
+  color: white;
+  background-color: black;
+  border:1px double;
+  border-color: white;
+
 }
 .pagination > li > button.active,
-.pagination > li > span.active,
 .pagination > li > button.active:hover,
-.pagination > li > span.active:hover,
-.pagination > li > button.active:focus,
-.pagination > li > span.active:focus {
+.pagination > li > button.active:focus {
   z-index: 3;
   color: #fff;
   cursor: default;
-  background-color: #337ab7;
-  border-color: #337ab7;
+  background-color: black;
+  border: 1px double;
+  border-color: white;
+
 }
-.pagination > li > span:disabled,
-.pagination > li > span:disabled:hover,
-.pagination > li > span:disabled:focus,
 .pagination > li > button:disabled,
 .pagination > li > button:disabled:hover,
 .pagination > li > button:disabled:focus {
-  color: #777;
+  color: #222;
   cursor: not-allowed;
-  background-color: #fff;
-  border-color: #ddd;
+  background-color: #343a40;
+  border-color: black;
 }
 .box_pagination_info {
   font-size: 12px;
   color: #666;
   padding-top: 9px;
 }
-
-
-/* 
-.box_pagination .pagination {
-  margin-top: 10px;
-}
-.box_change_pagelimit {
-  text-align: right;
-}
-.box_change_pagelimit .form-control {
-  display: inline-block;
-  vertical-align: middle;
-  width: 70px;
-  margin: 0 5px;
-} */

@@ -72,7 +72,7 @@ function AddGame() {
   return (
     
       <React.Fragment>
-        <h3>Add a Game</h3>
+        <div className='title-addgame badge-title'>Add a Game</div>
         <hr />
         <form onSubmit={handleSubmit}>
           <div className="form-group">

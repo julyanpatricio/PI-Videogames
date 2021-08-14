@@ -1,11 +1,11 @@
 .img-detail {
-  
-  object-fit: cover;
+object-fit: cover;
     width: 48%;
     height: 40%;
     height: -webkit-fill-available;
     border-radius: 50px;
     margin-left: 2%;
+    min-width: 320px;
 }
 .description{
   width: 80%;

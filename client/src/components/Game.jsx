@@ -74,7 +74,7 @@ function Game() {
                   Platforms:
                   {game.platforms.map((p, i) =>
                     <span className='badge-pill badge-dark-light'
-                      key={i || p.platform?.id}>
+                      key={p.platform?.id || i}>
                       {p.platform?.name || p}
                     </span>
                   )}

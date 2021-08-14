@@ -49,12 +49,14 @@ const getGames = async (next) => { // viene de /videogames
       let aux = {
         id: game.id,
         name: game.name,
+        wallpaper:game.image ||game.background_image,
         image: game.image || game.background_image.replace('/media/games/', '/media/resize/420/-/games/'),
         rating: game.rating,
         genres: game.genres,
         platforms: game.platforms.map(p => p.platform.name)
       }
       // gamesApi100.push(aux)
+      
       return aux
     })
 
