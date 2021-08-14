@@ -1,10 +1,8 @@
 .button {
-  padding: .6rem 1.5rem;
-  border-radius: 15%;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: .8rem;
-  border-style: groove;
+    padding: .6rem 1.5rem;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+    font-size: .8rem;
 }
 .buttons-menu-list{
       display: flex;
@@ -14,22 +12,18 @@
     width: 100%;
 }
 .button-menu-list{
-background-color: rgb(52 58 64);
-    color: black;
-    border: 1px solid black;
-    /* padding: 0; */
-    margin: 0.1%;
+    background-color: #0000004a;
+    color: white;
+    margin: 0.4%;
     border-radius: 0;
-    border: double;
+    border: 1px double;
 }
 .button-menu-list:hover{
 
-    background-color: rgb(0 0 0);
-    border: 1px solid #343a40;
-    color: white;
-    margin: 0.1%;
-    border-radius: 0;
-    border:double;
+    background-color: black;
+    
+    color: #ffc107;
+    
 }
 .button-menu{
 position: relative;
@@ -63,24 +57,23 @@ background-color: white;
 }
 
 .button-primary-active {
-background-color: #000000;
-    border: 1px solid #ffffff;
-    color: white;
-    
+background-color: black;
+    color: #ffc107;
     border-radius: 0;
-    border: double
+    border: 3px double;
 }
 
 .button-primary-inactive {
-background-color: #343a40;
-    border: 1px solid #000000;
-    color: black;
+background-color: #0000003d;
+    color: white;
     border-radius: 0;
     border: double;
     margin: 0.1%;
 }
 .buttons-functions{
-  margin: 2%;
+margin-inline: 2%;
+    padding-top: 1%;
+    margin-top: 1%;
     display: flex;
     justify-content: center;
 }

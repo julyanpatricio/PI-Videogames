@@ -51,7 +51,7 @@ function Pagination () {
       var pager = getPager()
 
       return (
-        // <div className='box_pagination row col-xs-12 text-center'>
+
       <ul className="pagination">
         <li>
           <button

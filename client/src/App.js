@@ -13,13 +13,13 @@ function App() {
 
     <div className="App">
 
+      <Route path="/" component={Nav} />
       <Route path="/" exact component={Landing} />
       {/* <Route path="/games" component={Nav} /> */}
       <Route path="/games" exact>
-        <Nav />
+        {/* <Nav /> */}
         <Games />
       </Route>
-      <Route path="/game" component={Nav} />
       <Switch>
         <Route path="/game/add" exact component={AddGame} />
         <Route path="/game/:id" exact component={Game} />

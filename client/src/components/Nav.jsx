@@ -12,15 +12,14 @@ import Search from "./Search";
 function Nav() {
     const urlPatch = useLocation().pathname
     const { games } = useSelector(state => state)
-
-
+    
     function getBackground() {
         return games.length ? `linear-gradient(0deg, rgba(52,58,64,1) 0%, rgba(52,58,64,0) 100%), url(${games[Math.floor(Math.random() * (games.length))].image}` : 'url(data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==)'
     }
-
+    
     return (
-        <>
-            <header className="navbar" style={{
+        urlPatch !== '/' ?
+            <div className="navbar" style={{
                 // backgroundImage: getBackground(),
                 backgroundImage: `linear-gradient(0deg, rgba(52,58,64,1) 0%, rgba(52,58,64,0) 100%), url(${bannerGamer})`,
                 backgroundRepeat: 'no-repeat',
@@ -43,8 +42,8 @@ function Nav() {
                         </li>
                     </ul>
                 </nav>
-            </header>
-        </>
+            </div>
+        : null
     );
 }
 
