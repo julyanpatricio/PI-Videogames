@@ -21,13 +21,11 @@ function Search() {
     dispatch(getGames(gameSearch.name))
   }
   
-  console.log(gameSearch)
   return (
 
 
     <form className="form-container" onSubmit={handleSubmit}> {/*este se ejecuta solo cuando haces click en el boton*/}
-      <div>
-        <label className="label" htmlFor="search-bar">Search Game: </label>
+      
         <input
           id='search-bar'
           type="text"
@@ -36,8 +34,8 @@ function Search() {
           value={gameSearch.name}
           onChange={handleChange} //este se ejecuta "en vivo" y actualiza el estado local del componente (podria usarse para desplegar una lista desde el cuadro de busqueda que coincida con lo que vayas tipeando)
         />
-      </div>
-      <button type="submit">BUSCAR</button>
+      
+      <button type="submit" className='button-search'>BUSCAR</button>
     </form>
   )
 }

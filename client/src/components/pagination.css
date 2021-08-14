@@ -4,6 +4,9 @@ li {
 /* ul{
   display: inline-block;
 } */
+.pagination{
+  padding-inline-start:0;
+}
 .pagination > li > button,
 .pagination > li > span {
   display: inline-block;

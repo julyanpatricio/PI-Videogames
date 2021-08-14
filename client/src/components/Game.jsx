@@ -54,7 +54,13 @@ function Game() {
                 </div>
 
                 <div className='Rating items-game-information'>
-                  Rating: {game.rating}/5
+                  Rating:
+
+                      <div className="stars-outer">
+                        <div className="stars-inner" style={{width: `${game.rating * 20}%`,
+                      overflow: 'hidden'}}></div>
+                      </div>
+                    
 
                 </div>
 

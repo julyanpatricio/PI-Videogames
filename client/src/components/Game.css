@@ -10,29 +10,29 @@
 .description{
   width: 80%;
   text-align: left;
+  margin-top: 4%; 
 }
 .game-detail {
   padding: 0 0;
-  /* text-align: center; */
+  min-height: -webkit-fill-available;
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* height: 100%; */
+    
     justify-content: space-between;
-    height: -webkit-fill-available;
+    
     
     
 }
 .description-container {
-    width: 80%;
-    height: 80%;
     border-radius: 20px;
-    border: solid;
+    border: 5px double;
     border-color: white;
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    padding: 2%;
+    margin-inline: 12%;
+    margin-block: 1%;
     flex-direction: column;
     height: -webkit-fill-available;
     background: #000000ba;
@@ -49,12 +49,15 @@
 }
 .game-information{
   width: 44%;
+    height: 100%;
     margin-right: 2%;
     margin-left: 4%;
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
 }
 .items-game-information{
   margin: 3%;
@@ -66,7 +69,7 @@
   display: flex;
     align-items: center;
     flex-direction: row;
-    
+    width:100%;
     flex-wrap: wrap;
 }
 .container-platforms > span{
@@ -88,7 +91,8 @@
 
 
 .badge-title{
-  top: 15%;
+  top: 13%;
+  font-size: 300%;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
@@ -111,4 +115,31 @@
 .badge-warning {
   color: #212529;
   background-color: #ffc107;
+}
+
+
+.stars-outer {
+    display: inline-block;
+    font-size: 24px;
+    position: relative;
+    font-family: FontAwesome;
+}
+
+.stars-outer::before {
+  content: "\272D \272D \272D \272D \272D";
+  color: white;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  width: 0;
+}
+
+.stars-inner::before {
+  content: "\272D \272D \272D \272D \272D";
+  color: #f8ce0b;
 }

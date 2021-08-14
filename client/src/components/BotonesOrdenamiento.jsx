@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  sortGames } from "../actions";
+import { sortGames } from "../actions";
 import { sort } from '../funciones/sort';
 import './Games.css';
 
@@ -13,46 +13,47 @@ function MostrarBotonOrd() {
   const [ordenamiento, setOrdenamiento] = useState({
     modo: 'Por rating', //alfabeticamente o por rating
     direccion: 'Descendente', //descendente o ascendente
-    games:games
+    games: games
   })
 
-  function mostrarOrdenamiento(){
+  function mostrarOrdenamiento() {
     setMostrarOrdenamiento(!botonOrdenamiento)
   }
 
   function handleChangeOrd(e) {
     setOrdenamiento(ordenamiento => ({
-          ...ordenamiento,
-          games:games,
-          [e.target.name]: e.target.value
-        }))
-    if(e.target.name === 'modo') dispatch(sortGames( sort(games, e.target.value, ordenamiento.direccion))) 
-    if(e.target.name === 'direccion') dispatch(sortGames( sort(games, ordenamiento.modo, e.target.value))) 
+      ...ordenamiento,
+      games: games,
+      [e.target.name]: e.target.value
+    }))
+    if (e.target.name === 'modo') dispatch(sortGames(sort(games, e.target.value, ordenamiento.direccion)))
+    if (e.target.name === 'direccion') dispatch(sortGames(sort(games, ordenamiento.modo, e.target.value)))
   }
 
 
   return (
-    <div className='dropdown'>
-      <button className={`button button-primary button-primary-${botonOrdenamiento ? 'active' : 'inactive'}`} onClick={mostrarOrdenamiento}>
+    <React.Fragment>
+      <div className='button-menu'>
+        <div className='buttons-menu-list'>
+          <button className='button button-menu-list' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
+            name='modo' value='Alfabeticamente'
+          >Alfabeticamente</button>
+          <button className='button button-menu-list' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
+            name='modo' value='Por rating'
+          >Por rating</button>
+          <p></p>
+          <button className='button button-menu-list' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
+            name='direccion' value='Ascendente'
+          >ascendente</button>
+          <button className='button button-menu-list' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
+            name='direccion' value='Descendente'
+          >descendente</button>
+        </div>
+        <button className={`button button-primary button-primary-${botonOrdenamiento ? 'active' : 'inactive'}`} onClick={mostrarOrdenamiento}>
           Ordenar juegos
-      </button>
-      <div>
-        <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
-        name='modo' value='Alfabeticamente'
-        >Alfabeticamente</button>
-        <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
-        name='modo' value='Por rating'
-        >Por rating</button>
-        <p></p>
-        <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
-        name='direccion' value='Ascendente'
-        >ascendente</button>
-        <button className='button' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
-        name='direccion' value='Descendente'
-        >descendente</button>
+        </button>
       </div>
-	  </div>
-
+    </React.Fragment>
   )
 };
 

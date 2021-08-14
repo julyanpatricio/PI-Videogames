@@ -9,20 +9,22 @@ import Search from "./Search";
 
 
 function Games() {
-  
-  
+
+
 
   return (
     <>
-        
-    {/* <Search /> */}
-    <MostrarBotonOrd />
-    <MostrarBotonFilt />
-    <hr />
-    <Pagination />
-    <GamesList />
-    
-  </>
+
+      {/* <Search /> */}
+      <div className='buttons-functions'>
+        <MostrarBotonFilt />
+        <MostrarBotonOrd />
+      </div>
+      <hr />
+      <Pagination />
+      <GamesList />
+
+    </>
   )
 }
 
