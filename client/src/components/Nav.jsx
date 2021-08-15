@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from '../logoHenry.png'
 import LogoGame from '../logo-game.png'
 import bannerGamer from '../bannerGamer.jpg'
+import logoJoystick from '../logo-joystick.png'
+
 import './Nav.css';
 import { useSelector } from "react-redux";
 import Search from "./Search";
@@ -26,7 +28,7 @@ function Nav() {
                 backgroundSize: 'cover'
             }}>
                 <Link className="navbar-brand" to="/">
-                    <img id="logo" src={LogoGame} className="d-inline-block align-top" alt="" />
+                    <img id="logo" src={logoJoystick} height={190} className="d-inline-block align-top" alt="" />
                 </Link>
                 {/* <h1>Videogames</h1> */}
                 <nav>

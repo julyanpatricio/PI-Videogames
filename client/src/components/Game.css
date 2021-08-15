@@ -18,7 +18,8 @@ object-fit: cover;
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+        color: white;
+
     justify-content: space-between;
     
     
@@ -37,6 +38,7 @@ object-fit: cover;
     height: -webkit-fill-available;
     background: #000000ba;
     justify-content: space-evenly;
+    font-size: 130%;
 }
 .description-container-up{
 
@@ -98,7 +100,8 @@ object-fit: cover;
 
 
 .badge-title{
-  top: 13%;
+          top: 17%;
+    color: white;
   font-size: 300%;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }

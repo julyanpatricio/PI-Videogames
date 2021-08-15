@@ -50,7 +50,7 @@ const getGamesByName = async (name, next) => { // viene de /videogames
           id: game.id,
           name: game.name,
           wallpaper:game.image ||game.background_image,
-          image: game.image || game.background_image.replace('/media/games/', '/media/resize/420/-/games/'),
+          image: game.image || game.background_image?.replace('/media/games/', '/media/resize/420/-/games/'),
           rating: game.rating,
           genres: game.genres
         }

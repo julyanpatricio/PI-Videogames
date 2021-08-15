@@ -73,7 +73,7 @@ function AddGame() {
     
       <React.Fragment>
         <div className='title-addgame badge-title'>Add a Game</div>
-        <hr />
+        
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name" className=" control-label">
