@@ -22,7 +22,7 @@ function Landing() {
       Enter the site
         </Link>
       </button>
-      <img src={LandingPage}   alt="landing page" />
+      <img className='img-landing' src={LandingPage}   alt="landing page" />
     </div>
   );
 }

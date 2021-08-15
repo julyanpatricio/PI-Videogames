@@ -71,9 +71,12 @@ background-color: #0000003d;
     margin: 0.1%;
 }
 .buttons-functions{
-margin-inline: 2%;
+    margin-inline: 2%;
     padding-top: 1%;
     
     display: flex;
     justify-content: center;
 }
+ .background-games{
+    height: -webkit-fill-available;
+ }

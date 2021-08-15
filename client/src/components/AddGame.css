@@ -35,6 +35,10 @@ label {
   color: white;
 }
 
+#estrellas{
+ font-size: 150%;
+}
+
 .rating { /* invierto las estrellas del rating para poder seleccionar todos los elementos de procedan a determinara etiqueta,id, etc */
   direction: rtl; /* right to left */
   unicode-bidi: bidi-override; /* bidi de bidireccional */
@@ -113,8 +117,6 @@ input[type="radio"]{
 }
 
 .badge-warning {
-  font-family: fangsong;
-    font-size: smaller;
   color: #212529;
   background-color: #ffc107;
 }

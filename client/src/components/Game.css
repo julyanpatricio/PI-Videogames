@@ -8,10 +8,16 @@ object-fit: cover;
     min-width: 320px;
 }
 .description{
-  width: 80%;
+  width: 90%;
   text-align: left;
   margin-top: 4%; 
+  font-size: 125%;
 }
+
+.description > p{
+  padding-left: 5%;
+}
+
 .game-detail {
   padding: 0 0;
   min-height: -webkit-fill-available;
@@ -21,8 +27,7 @@ object-fit: cover;
         color: white;
 
     justify-content: space-between;
-    
-    
+
     
 }
 .description-container {
@@ -38,7 +43,6 @@ object-fit: cover;
     height: -webkit-fill-available;
     background: #000000ba;
     justify-content: space-evenly;
-    font-size: 130%;
 }
 .description-container-up{
 
@@ -60,9 +64,10 @@ object-fit: cover;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
+ 
 }
 .items-game-information{
-  margin: 3%;
+  margin: 2%;
 }
 .container-genres > span{
   margin: 1%;

@@ -86,7 +86,7 @@ function Game() {
             <div className='description-container-down'>
               <div className='description'>
                 Description: <p></p>
-                {parse(game.description)}
+                {parse(game.description.replaceAll('<br />', '<br /><br />'))}
               </div>
 
             </div>
