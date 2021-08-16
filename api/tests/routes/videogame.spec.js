@@ -17,7 +17,7 @@ const createVideogame = {
   rating:5
 }
 
-describe('Videogames routes', () => {
+xdescribe('Videogames routes', () => {
   let getVideogames, getVideogameId, postVideogame, getVideogameIdCreated, getVideogamesByName
   before(() => conn.authenticate()
     .then(async () => {
