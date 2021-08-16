@@ -78,5 +78,5 @@ background-color: #0000003d;
     justify-content: center;
 }
  .background-games{
-    height: -webkit-fill-available;
+    height: inherit;
  }

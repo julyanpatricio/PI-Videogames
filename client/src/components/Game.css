@@ -105,33 +105,11 @@ object-fit: cover;
 
 
 .badge-title{
-          top: 17%;
+          top: 16%;
     color: white;
   font-size: 300%;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
-
-.position-absolute {
-  position: absolute;
-}
-
-.badge-dark-light {
-  color: #fff;
-  background-color: #575a5e;
-}
-
-.badge-pill {
-  padding-right: 0.6em;
-  padding-left: 0.6em;
-  margin: 0.2%;
-  border-radius: 10rem;
-}
-
-.badge-warning {
-  color: #212529;
-  background-color: #ffc107;
-}
-
 
 .stars-outer {
     display: inline-block;

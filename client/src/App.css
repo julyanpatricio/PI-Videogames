@@ -1,34 +1,61 @@
-html{
-  background:
-      repeating-linear-gradient(190deg, rgba(105, 2, 2, 0.5) 40px,
-        rgba(19, 11, 0, 0.5) 80px, rgba(80, 8, 8, 0.5) 120px,
-        rgba(1, 53, 1, 0.5) 160px, rgba(15, 15, 53, 0.5) 200px,
-        rgba(46, 39, 51, 0.5) 240px, rgba(68, 1, 68, 0.5) 280px,
-        rgba(19, 10, 53, 0.5) 300px),
-      repeating-linear-gradient(-190deg, rgba(105, 2, 2, 0.5) 40px,
-      rgba(19, 11, 0, 0.5) 80px, rgba(80, 8, 8, 0.5) 120px,
-      rgba(1, 53, 1, 0.5) 160px, rgba(15, 15, 53, 0.5) 200px,
-      rgba(46, 39, 51, 0.5) 240px, rgba(68, 1, 68, 0.5) 280px,
-      rgba(19, 10, 53, 0.5) 300px),
-      repeating-linear-gradient(23deg, rgb(61, 0, 0) 50px, rgb(61, 61, 60) 100px,
-        rgb(36, 36, 1) 150px, rgb(1, 43, 1) 200px, rgb(15, 15, 43) 250px,
-        rgb(45, 31, 56) 300px, rgb(44, 25, 44) 350px, rgb(58, 0, 0) 370px);
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-html, body, #root{
-  height: 100%;
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: whitesmoke;
+    background-color: #33393f;
 }
+
+html, body, #root, .App{
+  height: 100%;
+  background-color: #30353b;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.badge-dark-light {
+  color: #fff;
+  background-color: #575a5e;
+}
+
+.badge-pill {
+      
+  font-size: inherit;
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  margin: 0.2%;
+  border-radius: 10rem;
+}
+
+.badge-warning {
+  color: #212529;
+  background-color: #ffc107;
+}
+
+
+
+button{
+  cursor: pointer;
+}
+
 
 .App {
   text-align: center;
+  
+/*  width: -webkit-fill-available;
+    height: -webkit-fill-available;*/
 }
 
-
-/* body {
-  background-color: transparent;
-  background: url('./landingPage.jpg') no-repeat center center fixed;
-  background-size: cover;
-} */
 
 .App-logo {
   height: 40vmin;
@@ -64,3 +91,4 @@ html, body, #root{
     transform: rotate(360deg);
   }
 }
+

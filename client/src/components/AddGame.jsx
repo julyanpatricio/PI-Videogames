@@ -176,7 +176,7 @@ function AddGame() {
           <div className="col-sm-offset-2 ">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="button-addgame"
               style={{ marginTop: "20px" }}
             >
               Add Game

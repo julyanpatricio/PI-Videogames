@@ -60,14 +60,7 @@ font-size: 2rem;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
-.position-absolute {
-  position: absolute !important;
-}
 
-.mt-4,
-.my-4 {
-  margin-top: 1.5rem !important;
-}
 
 .badge-position {
   left: 2%;
@@ -111,8 +104,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .right-badge {
-  right: 2%;
-  top: -3%;
+ right: 0%;
+    top: 4%;
 }
 
 .loading-anim-size {

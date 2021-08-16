@@ -13,11 +13,12 @@ display: flex;
 .navbar-brand{
   padding-left:2%;
 }
-a {
+
+/* a {
   color: #007bff;
   text-decoration: none;
   background-color: transparent;
-}
+} */
 
 form label {
   font-size: 16px;
@@ -82,7 +83,12 @@ input[type="radio"]{
   border-color: red;
   border-width: thick;
 }
-
+.button-addgame{
+  background-color: transparent;
+  color: white;
+  border: double;
+  font-size: larger;
+}
 .badge {
   display: inline-block;
   padding: 0.25em 0.4em;
@@ -102,28 +108,7 @@ input[type="radio"]{
     margin-top: 1%;
 }
 
-.badge-dark-light {
-  color: #fff;
-  background-color: #575a5e;
-}
 
-.badge-pill {
-      font-family: fangsong;
-    font-size: larger;
-  padding-right: 0.6em;
-  padding-left: 0.6em;
-  margin: 0.2%;
-  border-radius: 10rem;
-}
-
-.badge-warning {
-  color: #212529;
-  background-color: #ffc107;
-}
-
-.mt-4, .my-4 {
-  margin-top: 1.5rem !important;
-}
 
 input[type="checkbox"] {
   display: none;

@@ -3,7 +3,7 @@
     height: -webkit-fill-available;
 }
 .position-absolute {
-  position: absolute !important;
+  position: absolute;
 }
 
 .landing {
@@ -27,6 +27,15 @@
     font-size: .8rem;
     border-style: groove;
     -webkit-appearance: button;
-    bottom: 20%;
+    bottom: 10%;
     left:48%;
+    background-color: transparent;
+    color: white;
+    border: double;
 }
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
