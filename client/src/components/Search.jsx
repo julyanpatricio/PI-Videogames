@@ -35,7 +35,7 @@ function Search() {
           onChange={handleChange} //este se ejecuta "en vivo" y actualiza el estado local del componente (podria usarse para desplegar una lista desde el cuadro de busqueda que coincida con lo que vayas tipeando)
         />
       
-      <button type="submit" className='button-search'>BUSCAR</button>
+      <button type="submit" className='button-search'>Search games</button>
     </form>
   )
 }

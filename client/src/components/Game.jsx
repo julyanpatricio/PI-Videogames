@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { clearPage, getGameDetail } from "../actions";
-import './Game.css'
 import parse from 'html-react-parser'
+import './Game.css'
 
 
 function Game() {
@@ -11,24 +11,12 @@ function Game() {
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  // cuando se monta la pagina hace el fetch
+  // cuando se monta la pagina hace el get
   useEffect(() => {
     dispatch(getGameDetail(id));
     return () => dispatch(clearPage()) //cuando se desmonta, limpia el componente
   }, [id, dispatch]);
 
-  /**
-   * Ruta de detalle de videojuego: debe contener
-
-[ ] Los campos mostrados en la ruta principal para cada videojuegos
-[ ] imagen, 
-[ ] nombre
-[ ] géneros
-[ ] Descripción
-[ ] Fecha de lanzamiento
-[ ] Rating
-[ ] Plataformas
-   */
 
   return (
     <React.Fragment>
@@ -95,9 +83,9 @@ function Game() {
         </div>
 
       ) : game === undefined ? (
-        <div>Cargando...</div>
+        <div>Loading...</div>
       ) : (
-        <h1>Juego inexistente</h1>
+        <h1>Inexist Game</h1>
       )}
     </React.Fragment>
   )

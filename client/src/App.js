@@ -7,28 +7,20 @@ import AddGame from './components/AddGame';
 import Landing from './components/Landing'
 
 
-
-
 function App() {
+
   return (
-
     <div className="App">
-
       <Route path="/" component={Nav} />
       <Route path="/" exact component={Landing} />
-      {/* <Route path="/games" component={Nav} /> */}
       <Route path="/games" exact>
-        {/* <Nav /> */}
         <Games />
       </Route>
       <Switch>
         <Route path="/game/add" exact component={AddGame} />
         <Route path="/game/:id" exact component={Game} />
       </Switch>
-
     </div>
-
-
   );
 }
 

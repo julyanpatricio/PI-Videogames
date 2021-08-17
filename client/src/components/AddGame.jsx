@@ -41,6 +41,7 @@ function AddGame() {
   }
   function handleSubmit(e) {
     e.preventDefault()
+    if(Object.keys(errors).length > 0) return alert('check required fields')
     axios.post('/videogame/', values)
       .then(response => {
         dispatch(getGames())
@@ -80,7 +81,7 @@ function AddGame() {
               Name
             </label>
             <div className="">
-              <input onChange={handleChange} value={values.name} name="name" type="text" className={errors.name && 'has-error form-control'} />
+              <input autoComplete="off"onChange={handleChange} value={values.name} name="name" type="text" className={errors.name && 'has-error form-control'} required/>
               {errors.name && ( //si existe errors.name, se agregara un elemento p con el contenido del error
                 <p className="has-error">{errors.name}</p>
               )}
@@ -93,7 +94,7 @@ function AddGame() {
               Description
             </label>
             <div className="">
-              <input onChange={handleChange} value={values.description} name="description" type="text" className={errors.description && 'has-error form-control'} required />
+              <input autoComplete="off"onChange={handleChange} value={values.description} name="description" type="text" className={errors.description && 'has-error form-control'} required />
               {errors.description && (
                 <p className="has-error">{errors.description}</p>
               )}
@@ -136,7 +137,7 @@ function AddGame() {
               Image
             </label>
             <div className="">
-              <input onChange={handleChange} name="image" type="text" className="form-control" />
+              <input autoComplete="off"onChange={handleChange} name="image" type="text" className="form-control" />
             </div>
           </div>
 
@@ -173,7 +174,7 @@ function AddGame() {
           </div>
 
 
-          <div className="col-sm-offset-2 ">
+          <div>
             <button
               type="submit"
               className="button-addgame"

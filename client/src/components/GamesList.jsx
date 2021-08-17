@@ -1,19 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom'
-// import './Games.css'
 import './GamesList.css'
-// import '../App.css'
 
 function GamesList() {
   const { games, startIndex, endIndex } = useSelector((state) => state);
 
-  // Imagen
-  // Nombre
-  // Géneros
-
   return (
-    
     <div className='gamesList'>
       {games.slice(startIndex, endIndex).map((game, i) => (
         <React.Fragment key={game.id}>
@@ -39,7 +32,7 @@ function GamesList() {
                     {genre.name}
                   </div>
                 ))}
-              </div>              
+              </div>
             </div>
           </Link>
         </React.Fragment>

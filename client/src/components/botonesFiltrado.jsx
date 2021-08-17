@@ -33,12 +33,12 @@ function MostrarBotonFilt() {
     <React.Fragment>
       <div className='button-menu'>
         <button className={`button button-primary button-primary-${botonFiltrado ? 'active' : 'inactive'}`} onClick={mostrarFiltrado}>
-          Filtrar juegos
+          Filter games
         </button>
         <div className='buttons-menu-list'>
           <button className='button button-menu-list' hidden={!botonFiltrado} onClick={handleChangeFilt}
             name='tipoGenero' value=''
-          >Todos</button>
+          >All</button>
 
           {genres && genres.map((genre) => (
             <button className='button button-menu-list' hidden={!botonFiltrado} onClick={handleChangeFilt}
@@ -48,13 +48,13 @@ function MostrarBotonFilt() {
           <p></p>
           <button className='button button-menu-list' hidden={!(botonFiltrado)} onClick={handleChangeFilt}
             name='tipoReal' value='Real'
-          >Real</button>
+          >Original</button>
           <button className='button button-menu-list' hidden={!(botonFiltrado)} onClick={handleChangeFilt}
             name='tipoReal' value='Creado'
-          >Creado</button>
+          >Created</button>
           <button className='button button-menu-list' hidden={!(botonFiltrado)} onClick={handleChangeFilt}
             name='tipoReal' value='Ambos'
-          >Ambos</button>
+          >Both</button>
         </div>
       </div>
     </React.Fragment>

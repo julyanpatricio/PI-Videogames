@@ -37,20 +37,20 @@ function MostrarBotonOrd() {
         <div className='buttons-menu-list'>
           <button className='button button-menu-list' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
             name='modo' value='Alfabeticamente'
-          >Alfabeticamente</button>
+          >Alphabetically</button>
           <button className='button button-menu-list' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
             name='modo' value='Por rating'
-          >Por rating</button>
+          >By rating</button>
           <p></p>
           <button className='button button-menu-list' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
             name='direccion' value='Ascendente'
-          >ascendente</button>
+          >Ascending</button>
           <button className='button button-menu-list' hidden={!botonOrdenamiento} onClick={handleChangeOrd}
             name='direccion' value='Descendente'
-          >descendente</button>
+          >Descending</button>
         </div>
         <button className={`button button-primary button-primary-${botonOrdenamiento ? 'active' : 'inactive'}`} onClick={mostrarOrdenamiento}>
-          Ordenar juegos
+          Order games
         </button>
       </div>
     </React.Fragment>

@@ -4,13 +4,15 @@
     font-weight: 600;
     font-size: .8rem;
 }
+
 .buttons-menu-list{
       display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+        width: 105%;
 }
+
 .button-menu-list{
     background-color: #0000004a;
     color: white;
@@ -18,30 +20,33 @@
     border-radius: 0;
     border: 1px double;
 }
-.button-menu-list:hover{
 
-    background-color: black;
-    
-    color: #ffc107;
-    
+.button-menu-list:hover{
+    background-color: black;  
+    color: #ffc107;  
 }
+
 .button-menu{
 position: relative;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
+
 .button-search{
 background-color: transparent;
     color: white;
     border: double;
+    padding: 4px 12px;
+    margin-top: 1%;
+    width: 100%;
 }
+
 .button-search:hover{
 background-color: white;
     color: black;
     border: 1px solid black;
     border: double;
-
 }
 
 .button:focus {
@@ -78,5 +83,5 @@ background-color: #0000003d;
     justify-content: center;
 }
  .background-games{
-    height: inherit;
+    height: 100vh;
  }

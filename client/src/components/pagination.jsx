@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changePage } from "../actions";
@@ -58,7 +56,7 @@ function Pagination () {
             disabled={pager.currentPage === 1 ? true : false}
             onClick={() => setPage(1)}
           >
-            Inicio
+            First
           </button>
         </li>
         <li>
@@ -92,7 +90,7 @@ function Pagination () {
             disabled={pager.currentPage === pager.totalPages ? true : false}
             onClick={() => setPage(pager.totalPages)}
           >
-            Último
+            Latest
           </button>
         </li>
       </ul>
