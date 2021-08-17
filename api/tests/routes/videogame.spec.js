@@ -17,7 +17,7 @@ const createVideogame = {
   rating:5
 }
 
-xdescribe('Videogames routes', () => {
+describe('Videogames routes', () => {
   let getVideogames, getVideogameId, postVideogame, getVideogameIdCreated, getVideogamesByName
   before(() => conn.authenticate()
     .then(async () => {
@@ -29,7 +29,7 @@ xdescribe('Videogames routes', () => {
       getVideogamesByName = await agent.get('/videogames?name=mario')
       getVideogameId = await agent.get('/videogame/99')
       getVideogameIdCreated = await agent.get('/videogame/1')
-      postVideogame = await agent.post('/videogame').send({... createVideogame, id:uuidv4(), name: 'Henry Game 2'})
+      postVideogame = await agent.post('/videogame').send(createVideogame)
     })
     .catch((err) => {
       console.error('Unable to connect to the database:', err)
@@ -104,13 +104,26 @@ xdescribe('Videogames routes', () => {
   })
 
   describe('POST /videogame', () => {
-    it('responds with status 200', () => {
-      expect(postVideogame.status).to.equal(200)
-    })
     it('If the name already exists, you must return an object with an error message', async () => {
       let created = await agent.post('/videogame').send({... createVideogame, id:uuidv4()})
       expect(created.body).to.have.property('error')
     })
+    it('if a name is not provided, you must return an object with an error message', async () => {
+      let created = await agent.post('/videogame').send({... createVideogame, name:null, id:uuidv4()})
+      expect(created.body).to.have.property('error')
+    })
+    it('if a description is not provided, you must return an object with an error message', async () => {
+      let created = await agent.post('/videogame').send({... createVideogame, description:null, name:'NEW henry game', id:uuidv4()})
+      expect(created.body).to.have.property('error')
+    })
+    it('if a platforms is not provided, you must return an object with an error message', async () => {
+      let created = await agent.post('/videogame').send({... createVideogame, platforms:null, name:'NEW henry game', id:uuidv4()})
+      expect(created.body).to.have.property('error')
+    })
+    it('responds with status 200 if all data is valid', () => {
+      expect(postVideogame.status).to.equal(200)
+    })
+
   })
 
 })

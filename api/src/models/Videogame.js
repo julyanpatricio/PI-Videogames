@@ -13,18 +13,24 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       unique:true,
       allowNull: false,
+      validate:{
+        notEmpty:true
+      }
     },
     description: {
       type: DataTypes.TEXT,
       allowNull: false,
+      validate:{
+        notEmpty:true
+      }
     },
     released: {
       type: DataTypes.STRING,
-      // type: DataTypes.DATEONLY //Si llego con el tiempo, desplegar en el form un 'calendario' para ingresar una fecha y luego formatearlo con el formato de DATEONLY antes de guardarlo en la base de datos
     },
     rating: {
       type: DataTypes.FLOAT,
       validate: {
+        isNumeric: true,
         max:5
       }
     },
