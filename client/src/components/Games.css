@@ -83,5 +83,5 @@ background-color: #0000003d;
     justify-content: center;
 }
  .background-games{
-    height: 100vh;
+        min-height: 78vmin;
  }

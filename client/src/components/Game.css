@@ -20,7 +20,6 @@ object-fit: cover;
 
 .game-detail {
   padding: 0 0;
-  min-height: -webkit-fill-available;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -105,10 +104,9 @@ object-fit: cover;
 
 
 .badge-title{
-          top: 16%;
-    color: white;
-  font-size: 300%;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+color: white;
+    margin-top: 0px;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .stars-outer {

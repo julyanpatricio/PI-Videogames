@@ -20,13 +20,13 @@ function Games() {
         backgroundSize: 'cover',
       }}>
         <div className='background-games' style={{
-          background: 'linear-gradient(rgb(52 58 64 / 79%) 50%, rgb(52 58 64 / 80%) 40%)'
+          background: 'linear-gradient(rgb(52 58 64 / 50%) 50%, rgb(52 58 64 / 50%) 40%)'
         }}>
           <div className='buttons-functions'>
             <MostrarBotonFilt />
             <MostrarBotonOrd />
           </div>
-          <hr />
+          <hr style={{mixBlendMode: 'soft-light'}}/>
           <Pagination />
           <GamesList />
         </div>

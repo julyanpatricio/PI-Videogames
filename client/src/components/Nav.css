@@ -1,11 +1,11 @@
 .navbar {
     color: aliceblue;
-        height: 230px;
     padding-inline: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-        background-position-x: right;
+        background-position-x: center;
+        flex-wrap: wrap;
 }
 
 .row {

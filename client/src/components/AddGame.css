@@ -103,9 +103,9 @@ input[type="radio"]{
 }
 
 .title-addgame {
-  position:absolute;
-    width: 100%;
-    margin-top: 1%;
+width: 100%;
+    font-size: xx-large;
+    margin-top: -2.5%;
 }
 
 
