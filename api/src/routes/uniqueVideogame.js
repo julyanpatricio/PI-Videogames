@@ -38,6 +38,7 @@ router.get('/:id', async (req, res, next) => { // viene de /videogame
 })
 
 
+
 router.post('/', async (req, res, next) => { // viene de /videogame
   const id = uuidv4()
   let {name, description, released, rating, platforms, genres, image } = req.body
@@ -52,5 +53,23 @@ router.post('/', async (req, res, next) => { // viene de /videogame
     next(error)
   }
 })
+
+
+// -------- Con .Then ----------
+// router.post('/', (req, res, next) => { // viene de /videogame
+//   const id = uuidv4()
+//   let {name, description, released, rating, platforms, genres, image } = req.body
+//   if(!description || !platforms || !name) return res.json({"error": "you must provide a name, a description and at least one platform"})
+//   return Videogame.findOne({where:{name:name}}) 
+//   .then(resPromise => {
+//     if(resPromise)  return res.json({"error": "The name already exists in the database"})
+//     return Videogame.create({id, name, description, released, rating, platforms, image})
+//   })
+//   .then(newGame => {
+//     newGame.setGenres(genres)
+//     return res.json(newGame)
+//   })
+//   .catch((error) => next(error))
+// })
 
 module.exports = router;
