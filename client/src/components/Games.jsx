@@ -40,7 +40,7 @@ function Games() {
             <div style={{
               marginBlock:'12%'
             }}>
-              <img src={gif}  />
+              <img src={gif} alt='spinner de carga' />
             </div>
           ) : (
             <h1>Inexist Game</h1>
