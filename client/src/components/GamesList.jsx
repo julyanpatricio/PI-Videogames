@@ -14,7 +14,7 @@ function GamesList() {
             <div className='card bg-dark text-white border-0'>
               <div>
                 <div className='img-zoom img-zoom-container card-background bg-secondary'>
-                  <img className='card-img-top' width={420} height={300} src={game.image} alt={game.name} />
+                  <img className='card-img-top'  src={game.image} alt={game.name} />
                 </div>
                 <div className='badge-pill badge-warning position-absolute right-badge'>★{game.rating}/5</div>
               </div>

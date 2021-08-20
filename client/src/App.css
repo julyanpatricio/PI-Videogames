@@ -14,6 +14,7 @@ body {
 html, body, #root, .App{
   
   background-color: rgb(50 56 62);
+  min-width: 55vmax;
 }
 
 ::-webkit-scrollbar {
@@ -21,6 +22,9 @@ html, body, #root, .App{
 }
 
 
+#logo{
+  max-height: 22vmin;
+}
 
 .badge-dark-light {
   color: #fff;

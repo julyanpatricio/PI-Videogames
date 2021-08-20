@@ -4,11 +4,11 @@
 .gamesList{
 font-size: 2rem;
     text-align: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 420px);
+    display: flex;
     gap: 2% 6%;
     justify-content: center;
     padding: 2%;
+    flex-wrap: wrap;
 }
 
 .gameImage{
@@ -28,7 +28,8 @@ font-size: 2rem;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-width: 110%;
+  max-width: 95vw;
+  margin-bottom: 10%;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -120,6 +121,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 .img-zoom img {
   height: 250px;
+  width: 420px;
+    max-width: 95vw;
   display: block;
   position: relative;
   transition: all 2s ease-out;
