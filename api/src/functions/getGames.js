@@ -12,16 +12,14 @@ const getGames = async (next) => { // viene de /videogames
   try {
     
   
+    // let [gamesApi, gamesDb] = await Promise.all(
   let [gamesApi,gamesApi2,gamesApi3,gamesApi4,gamesApi5, gamesDb] = await Promise.all(
-  // let [gamesApi, gamesDb] = await Promise.all(
     [
       axios.get(`${URLapiGames}?${KEY_API}`),
       axios.get(`${URLapiGames}?${KEY_API}&page=2`),
       axios.get(`${URLapiGames}?${KEY_API}&page=3`),
       axios.get(`${URLapiGames}?${KEY_API}&page=4`),
       axios.get(`${URLapiGames}?${KEY_API}&page=5`),
-
-      // Videogame.findAll({include: 'genres'})
       Videogame.findAll({
         include: {
           model: Genre,
@@ -42,10 +40,10 @@ const getGames = async (next) => { // viene de /videogames
       // }
       
     // const gamesApi100 = []
-    gamesApi100 = gamesApi100.map(game => {
     // gamesApi100 = gamesApi.data.results.map(game => {
-    // gamesApi.data.results.some(game => {
-
+      // gamesApi.data.results.some(game => {
+        
+        gamesApi100 = gamesApi100.map(game => {
       let aux = {
         id: game.id,
         name: game.name,

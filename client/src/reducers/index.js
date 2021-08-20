@@ -1,6 +1,6 @@
 
 const initialState = {
-  games: [],
+  games: undefined,
   gamesSinFIltro:[],
   game: undefined,
   genres: '',

@@ -7,22 +7,24 @@ import './Landing.css'
 
 function Landing() {
   const dispatch = useDispatch();
-  
+
 
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(getGames())
     dispatch(getGenres())
-    }
+  }
 
   return (
     <div className='landing'>
-      <button className='button-landing  position-absolute' onClick={handleSubmit}>
-      <Link to="/games">
-      Enter the site
+
+      <button type='button' className='button-landing  position-absolute' onClick={handleSubmit}>
+        <Link to="/games">
+          Enter the site
         </Link>
       </button>
-      <img className='img-landing' src={LandingPage}   alt="landing page" />
+
+      <img className='img-landing' src={LandingPage} alt="landing page" />
     </div>
   );
 }

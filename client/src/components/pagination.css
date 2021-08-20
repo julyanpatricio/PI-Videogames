@@ -11,16 +11,14 @@ li {
     background-color: #0000004a;
     border: 1px double;
 }
-.pagination > li > button:hover,
-.pagination > li > button:focus{
+.pagination > li > button:hover{
   z-index: 2;
   color: #ffc107;
   background-color: black;
   border:1px double;
 }
 .pagination > li > button.active,
-.pagination > li > button.active:hover,
-.pagination > li > button.active:focus {
+.pagination > li > button.active:hover{
   z-index: 3;
   cursor: default;
   color: #ffc107;
@@ -29,8 +27,7 @@ li {
 
 }
 .pagination > li > button:disabled,
-.pagination > li > button:disabled:hover,
-.pagination > li > button:disabled:focus {
+.pagination > li > button:disabled:hover{
     color: black;
     cursor: not-allowed;
     background-color: #0000004a;

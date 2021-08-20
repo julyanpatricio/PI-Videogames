@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { clearPage, getGameDetail } from "../actions";
 import parse from 'html-react-parser'
 import './Game.css'
+import gif from '../WMDx.gif'
 
 
 function Game() {
@@ -90,7 +91,11 @@ function Game() {
 
         </div>
       ) : game === undefined ? (
-        <div>Loading...</div>
+        <div style={{
+          marginBlock:'12%'
+        }}>
+          <img src={gif}  />
+        </div>
       ) : (
         <h1>Inexist Game</h1>
       )}

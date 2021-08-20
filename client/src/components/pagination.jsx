@@ -22,16 +22,15 @@ function Pagination () {
       startFromNumber
 
       if (state.currentPage <= Math.ceil(state.pagesToShow / 2)) {
-        startFromNumber = 1;
+        startFromNumber = 1; //verifico si ya me pase del 3 para ver si tengo que incrementar los valores de los botones
       } else 
       if (
         state.currentPage + Math.floor((state.pagesToShow - 1) / 2) >= state.totalPages
-      ) {
-        startFromNumber = state.totalPages - (state.pagesToShow - 1);
-      } else {
+      ) { // si adelante de la pagina actual hay menos de 2 botones, muestro los ultimos 5
+        startFromNumber = state.totalPages - (state.pagesToShow - 1); 
+      } else { //en caso de no estar en ninguno de los 2 extremos, voy mostrando desde 2 antes de la pagina actual
         startFromNumber = state.currentPage - Math.floor(state.pagesToShow / 2);
       }
-  
 
     for (var i = 1; i <= state.pagesToShow; i++) {
       pages.push(startFromNumber++);

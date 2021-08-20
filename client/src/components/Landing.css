@@ -25,14 +25,15 @@
     border-style: groove;
     -webkit-appearance: button;
     bottom: 10%;
-    left:48%;
+    left: 46.5%;
     background-color: transparent;
     color: white;
     border: double;
 }
 
 a{
-  color: white;
-  text-decoration: none;
+      color: white;
+    text-decoration: none;
+    padding: 10px 23px;
 }
 

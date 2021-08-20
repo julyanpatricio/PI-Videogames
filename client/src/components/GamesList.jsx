@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 import './GamesList.css'
 
 function GamesList() {
-  const { games, startIndex, endIndex } = useSelector((state) => state);
+  let { games, startIndex, endIndex } = useSelector((state) => state);
 
   return (
     <div className='gamesList'>
-      {games.slice(startIndex, endIndex).map((game, i) => (
+      { games.slice(startIndex, endIndex).map((game, i) => (
         <React.Fragment key={game.id}>
           <Link to={`/game/${game.id}`}>
             <div className='card bg-dark text-white border-0'>
@@ -36,7 +36,8 @@ function GamesList() {
             </div>
           </Link>
         </React.Fragment>
-      ))}
+      )) 
+    }
     </div>
   )
 }

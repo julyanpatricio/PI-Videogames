@@ -5,30 +5,46 @@ import Pagination from "./pagination";
 import GamesList from "./GamesList";
 import { useSelector } from "react-redux";
 import './Games.css'
+import backgroundDefault from '../backgroundDefault.jpg'
+import gif from '../WMDx.gif'
 
 
 
 function Games() {
-  const { games, startIndex } = useSelector((state) => state);
+  const { games, startIndex, endIndex } = useSelector((state) => state);
 
 
   return (
     <React.Fragment>
+
       <div className='background-games' style={{
-        backgroundImage: `linear-gradient(rgba(52,58,64,1) 0%, rgba(52,58,64,0) 30%), url(${games[startIndex]?.wallpaper || 'https://media.rawg.io/media/games/4e6/4e6e8e7f50c237d76f38f3c885dae3d2.jpg' })`,
+        backgroundImage: `linear-gradient(rgba(52,58,64,1) 0%, rgba(52,58,64,0) 30%), url(${(games && games[Math.floor(Math.random() * (endIndex - startIndex) + startIndex)]?.wallpaper) || backgroundDefault})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}>
         <div className='background-games' style={{
           background: 'linear-gradient(rgb(52 58 64 / 50%) 50%, rgb(52 58 64 / 50%) 40%)'
         }}>
-          <div className='buttons-functions'>
-            <MostrarBotonFilt />
-            <MostrarBotonOrd />
-          </div>
-          <hr style={{mixBlendMode: 'soft-light'}}/>
-          <Pagination />
-          <GamesList />
+          {games ? (
+            <>
+              <div className='buttons-functions'>
+                <MostrarBotonFilt />
+                <MostrarBotonOrd />
+              </div>
+              <hr style={{ mixBlendMode: 'soft-light' }} />
+
+              <Pagination />
+              <GamesList />
+            </>
+          ) : games === undefined ? (
+            <div style={{
+              marginBlock:'12%'
+            }}>
+              <img src={gif}  />
+            </div>
+          ) : (
+            <h1>Inexist Game</h1>
+          )}
         </div>
       </div>
     </React.Fragment>

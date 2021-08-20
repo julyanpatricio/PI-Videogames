@@ -28,7 +28,7 @@ font-size: 2rem;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-width: 0;
+  min-width: 110%;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -56,7 +56,8 @@ font-size: 2rem;
 
 .h2-position {
   left: 2%;
-  top: 54%;
+  top: 55%;
+    font-size: 150%;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
