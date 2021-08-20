@@ -37,9 +37,7 @@ function Games() {
               <GamesList />
             </>
           ) : games === undefined ? (
-            <div style={{
-              marginBlock:'12%'
-            }}>
+            <div>
               <img src={gif} alt='spinner de carga' />
             </div>
           ) : (

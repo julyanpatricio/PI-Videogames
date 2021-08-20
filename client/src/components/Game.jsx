@@ -91,9 +91,7 @@ function Game() {
 
         </div>
       ) : game === undefined ? (
-        <div style={{
-          marginBlock:'12%'
-        }}>
+        <div>
           <img src={gif} alt='spinner de carga' />
         </div>
       ) : (
