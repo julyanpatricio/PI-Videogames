@@ -24,7 +24,7 @@ function GamesList() {
                 </div>
               </div>
               <h2 className='position-absolute h2-position'>
-                {game.name.length > 25 ? `${game.name.substring(0, 23)}...` : game.name}
+                {game.name}
               </h2>
               <div className='position-absolute genre-badge-position'>
                 {game.genres.map((genre, i) => (

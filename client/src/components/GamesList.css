@@ -57,9 +57,14 @@ font-size: 2rem;
 
 .h2-position {
   left: 2%;
-  top: 55%;
-    font-size: 150%;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    top: 54%;
+    width: 95%;
+    font-size: 155%;
+    white-space: nowrap;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 
