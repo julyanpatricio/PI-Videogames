@@ -28,3 +28,5 @@ conn.sync({ force: true }).then(() => {
     precarga() //precargo la DB genres con los generos que tiene la api
   });
 });
+
+
