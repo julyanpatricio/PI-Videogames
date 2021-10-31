@@ -9,8 +9,8 @@ import { Provider } from "react-redux";
 import store from "./store/index";
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://www.jpgamer.xyz/api"
-//axios.defaults.baseURL = "https://127.0.0.1:3001"
+//axios.defaults.baseURL = "https://www.jpgamer.xyz/api"
+axios.defaults.baseURL = "http://127.0.0.1:3001"
 
 ReactDOM.render(
   <React.StrictMode>
