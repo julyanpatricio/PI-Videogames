@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid')
 
 const createVideogame = {
   id: uuidv4(),
-  name: 'Henry Game',
+  name: 'My Game',
   description: 'Descripcion del juego',
   platforms: ['PC', 'Android'],
   genres: [1],
@@ -33,12 +33,12 @@ describe('Videogame model', () => {
           .catch(() => done());
       });
       it('should throw an error if name already exist', (done) => {
-        Videogame.create({ ...createVideogame, id: uuidv4(), name: 'Henry Game' })
+        Videogame.create({ ...createVideogame, id: uuidv4(), name: 'My Game' })
           .then(() => done(new Error('It requires a inexist name')))
           .catch(() => done());
       });
       it('should work when its a valid name', (done) => {
-        Videogame.create({ ...createVideogame, id: uuidv4(), name: 'NEW Henry Game' })
+        Videogame.create({ ...createVideogame, id: uuidv4(), name: 'NEW Game' })
           .then(() => {
             done()
           })

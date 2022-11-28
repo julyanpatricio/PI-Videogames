@@ -9,7 +9,7 @@ const { v4: uuidv4 } = require('uuid')
 const agent = session(app)
 const createVideogame = {
   id: uuidv4(),
-  name: 'Henry Game',
+  name: 'My Game',
   description: 'Descripcion del juego',
   platforms: ['PC', 'Android'],
   genres:[1],
@@ -21,9 +21,7 @@ describe('Videogames routes', () => {
   let getVideogames, getVideogameId, postVideogame, getVideogameIdCreated, getVideogamesByName
   before(() => conn.authenticate()
     .then(async () => {
-      console.log('autenticado')
       await Videogame.sync({ force: true })
-      console.log('sincronizado')
       await Videogame.create(createVideogame)
       getVideogames = await agent.get('/videogames')
       getVideogamesByName = await agent.get('/videogames?name=mario')
@@ -113,11 +111,11 @@ describe('Videogames routes', () => {
       expect(created.body).to.have.property('error')
     })
     it('if a description is not provided, you must return an object with an error message', async () => {
-      let created = await agent.post('/videogame').send({... createVideogame, description:null, name:'NEW henry game', id:uuidv4()})
+      let created = await agent.post('/videogame').send({... createVideogame, description:null, name:'NEW game', id:uuidv4()})
       expect(created.body).to.have.property('error')
     })
     it('if a platforms is not provided, you must return an object with an error message', async () => {
-      let created = await agent.post('/videogame').send({... createVideogame, platforms:null, name:'NEW henry game', id:uuidv4()})
+      let created = await agent.post('/videogame').send({... createVideogame, platforms:null, name:'NEW game', id:uuidv4()})
       expect(created.body).to.have.property('error')
     })
     it('responds with status 200 if all data is valid', () => {
